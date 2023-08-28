@@ -15,14 +15,18 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "1",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "1b0f0e71-4f76-498e-8c51-44b091bdad7a",
+				"spark.autotune.trackingId": "821eebb0-2a95-40e4-bd3e-ebc9ee666c7c",
 				"spark.synapse.context.sjdname": "WordCount"
 			},
 			"args": [
 				"abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/schenzer-synapse/batchjobs/Spark",
 				"job",
 				"definition",
-				"1/shakespeare.txt"
+				"1/shakespeare.txt",
+				"abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/schenzer-synapse/batchjobs/Spark",
+				"job",
+				"definition",
+				"1/results"
 			],
 			"jars": [],
 			"pyFiles": [
