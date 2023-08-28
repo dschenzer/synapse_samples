@@ -1,0 +1,29 @@
+{
+	"name": "relationship-hhgsdzvonb",
+	"properties": {
+		"Name": "relationship-hhgsdzvonb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SolarArray",
+		"ToTableName": "SolarArrayEnvironmentMeasurementGuideline",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SolarArrayId",
+				"ToColumnName": "SolarArrayId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SolarArray.cdm.json/SolarArray\",\"toEntity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"joinPairs\":[{\"fromAttribute\":\"SolarArrayId\",\"toAttribute\":\"SolarArrayId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "234b5076-8db6-4f47-a233-c2232a68ac0e"
+	},
+	"type": "RELATIONSHIP"
+}

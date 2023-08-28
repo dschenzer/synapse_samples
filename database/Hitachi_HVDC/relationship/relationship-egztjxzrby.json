@@ -1,0 +1,29 @@
+{
+	"name": "relationship-egztjxzrby",
+	"properties": {
+		"Name": "relationship-egztjxzrby",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Customer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "PartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Customer.cdm.json/Customer\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"PartyId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "ad4c6187-91fd-428e-adea-b14000be2c30"
+	},
+	"type": "RELATIONSHIP"
+}

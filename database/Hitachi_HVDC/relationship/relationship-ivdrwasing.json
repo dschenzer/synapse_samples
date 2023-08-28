@@ -1,0 +1,29 @@
+{
+	"name": "relationship-ivdrwasing",
+	"properties": {
+		"Name": "relationship-ivdrwasing",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Vendor",
+		"ToTableName": "Order",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VendorId",
+				"ToColumnName": "VendorId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Vendor.cdm.json/Vendor\",\"toEntity\":\"Order.cdm.json/Order\",\"joinPairs\":[{\"fromAttribute\":\"VendorId\",\"toAttribute\":\"VendorId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "3c916063-4594-427f-8062-8b1eaa3ebf6b"
+	},
+	"type": "RELATIONSHIP"
+}

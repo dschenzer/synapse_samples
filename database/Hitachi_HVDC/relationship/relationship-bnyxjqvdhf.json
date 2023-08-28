@@ -1,0 +1,29 @@
+{
+	"name": "relationship-bnyxjqvdhf",
+	"properties": {
+		"Name": "relationship-bnyxjqvdhf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SolarArray",
+		"ToTableName": "DiffuseHorizontalIrradiance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SolarArrayId",
+				"ToColumnName": "SolarArrayId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SolarArray.cdm.json/SolarArray\",\"toEntity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"joinPairs\":[{\"fromAttribute\":\"SolarArrayId\",\"toAttribute\":\"SolarArrayId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "4a673003-2883-43c0-84fc-9f76336ba6e9"
+	},
+	"type": "RELATIONSHIP"
+}

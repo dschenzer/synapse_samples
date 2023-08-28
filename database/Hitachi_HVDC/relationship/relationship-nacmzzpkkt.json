@@ -1,0 +1,29 @@
+{
+	"name": "relationship-nacmzzpkkt",
+	"properties": {
+		"Name": "relationship-nacmzzpkkt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VoltageRegulator",
+		"ToTableName": "SolarArray",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VoltageRegulatorId",
+				"ToColumnName": "VoltageRegulatorId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"toEntity\":\"SolarArray.cdm.json/SolarArray\",\"joinPairs\":[{\"fromAttribute\":\"VoltageRegulatorId\",\"toAttribute\":\"VoltageRegulatorId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "f2241834-84ef-4652-8f98-7935d9b83746"
+	},
+	"type": "RELATIONSHIP"
+}

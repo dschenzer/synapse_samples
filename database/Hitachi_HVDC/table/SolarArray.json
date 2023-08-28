@@ -1,0 +1,403 @@
+{
+	"name": "SolarArray",
+	"properties": {
+		"Name": "SolarArray",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "ManufacturedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "ManufacturedByPartyId"
+					}
+				},
+				{
+					"Name": "ModelNumber",
+					"Description": "The solar array model.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "ModelNumber"
+					}
+				},
+				{
+					"Name": "SerialNumber",
+					"Description": "The serial number of the solar array.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "SerialNumber"
+					}
+				},
+				{
+					"Name": "FixedTiltAngleDegrees",
+					"Description": "The fixed angle of tilt of the solar array if fixed.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "FixedTiltAngleDegrees"
+					}
+				},
+				{
+					"Name": "SolarArrayWidthMm",
+					"Description": "The width of the solar array in mm.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "SolarArrayWidthMm"
+					}
+				},
+				{
+					"Name": "SolarArrayLengthMm",
+					"Description": "The length of the solar array in mm.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "SolarArrayLengthMm"
+					}
+				},
+				{
+					"Name": "SolarArrayHeightMm",
+					"Description": "The height of the solar array in mm.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "SolarArrayHeightMm"
+					}
+				},
+				{
+					"Name": "SolarArrayWeightKg",
+					"Description": "The weight of the solar array in kg.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "SolarArrayWeightKg"
+					}
+				},
+				{
+					"Name": "InstallationDate",
+					"Description": "The installation date of the solar panel.",
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "InstallationDate"
+					}
+				},
+				{
+					"Name": "VoltageV",
+					"Description": "The voltage of the solar array.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "VoltageV"
+					}
+				},
+				{
+					"Name": "CurrentA",
+					"Description": "The current of the solar array.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "CurrentA"
+					}
+				},
+				{
+					"Name": "PowerW",
+					"Description": "The power of the solar array.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "PowerW"
+					}
+				},
+				{
+					"Name": "TrackingArrayIndicator",
+					"Description": "A photovoltaic (PV) array that follows the path of the sun to maximize the solar radiation incident on the PV surface. The two most common orientations are (1) one axis where the array tracks the sun east to west and (2) two-axis tracking where the array points directly at the sun at all times. Tracking arrays use both the direct and diffuse sunlight. Two-axis tracking arrays capture the maximum possible daily energy.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "TrackingArrayIndicator"
+					}
+				},
+				{
+					"Name": "TwoAxisTrackingArrayIndicator",
+					"Description": "Two-axis tracking arrays capture the maximum possible daily energy.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "TwoAxisTrackingArrayIndicator"
+					}
+				},
+				{
+					"Name": "SolarArrayTypeId",
+					"Description": "The unique identifier of a Solar Array Type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "SolarArrayTypeId"
+					}
+				},
+				{
+					"Name": "VoltageRegulatorId",
+					"Description": "The unique identifier of a voltage regulator.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArray.cdm.json/SolarArray",
+						"Name": "VoltageRegulatorId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "269eb670-c344-4d59-9178-ac519dd561a9",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArray",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArray",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarArrayId\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayId\"},\"ManufacturedByPartyId\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"ManufacturedByPartyId\"},\"ModelNumber\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"ModelNumber\"},\"SerialNumber\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SerialNumber\"},\"FixedTiltAngleDegrees\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"FixedTiltAngleDegrees\"},\"SolarArrayWidthMm\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayWidthMm\"},\"SolarArrayLengthMm\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayLengthMm\"},\"SolarArrayHeightMm\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayHeightMm\"},\"SolarArrayWeightKg\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayWeightKg\"},\"InstallationDate\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"InstallationDate\"},\"VoltageV\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"VoltageV\"},\"CurrentA\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"CurrentA\"},\"PowerW\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"PowerW\"},\"TrackingArrayIndicator\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"TrackingArrayIndicator\"},\"TwoAxisTrackingArrayIndicator\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"TwoAxisTrackingArrayIndicator\"},\"SolarArrayTypeId\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayTypeId\"},\"VoltageRegulatorId\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"VoltageRegulatorId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArray\",\"path\":\"SolarArray.cdm.json/SolarArray\"},\"description\":\"A grouping of multiple solar panels usually all feeding into one solar inverter.\\n\\nAn interconnected system of PV modules that function as a single electricity-producing unit. The modules are assembled as a discrete structure, with common support or mounting. In smaller systems, an array can consist of a single module.\",\"primaryKey\":[\"SolarArrayId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"ManufacturedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ManufacturedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"ModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The solar array model.\",\"isNullable\":true,\"name\":\"ModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of the solar array.\",\"isNullable\":true,\"name\":\"SerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"FixedTiltAngleDegrees\"},\"dataType\":\"integer\",\"description\":\"The fixed angle of tilt of the solar array if fixed.\",\"isNullable\":true,\"name\":\"FixedTiltAngleDegrees\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayWidthMm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The width of the solar array in mm.\",\"isNullable\":true,\"scale\":8,\"name\":\"SolarArrayWidthMm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayLengthMm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The length of the solar array in mm.\",\"isNullable\":true,\"scale\":8,\"name\":\"SolarArrayLengthMm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayHeightMm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The height of the solar array in mm.\",\"isNullable\":true,\"scale\":8,\"name\":\"SolarArrayHeightMm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayWeightKg\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The weight of the solar array in kg.\",\"isNullable\":true,\"scale\":8,\"name\":\"SolarArrayWeightKg\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"InstallationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The installation date of the solar panel.\",\"isNullable\":true,\"name\":\"InstallationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"VoltageV\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The voltage of the solar array.\",\"isNullable\":true,\"scale\":8,\"name\":\"VoltageV\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"CurrentA\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The current of the solar array.\",\"isNullable\":true,\"scale\":8,\"name\":\"CurrentA\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"PowerW\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The power of the solar array.\",\"isNullable\":true,\"scale\":8,\"name\":\"PowerW\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"TrackingArrayIndicator\"},\"dataType\":\"boolean\",\"description\":\"A photovoltaic (PV) array that follows the path of the sun to maximize the solar radiation incident on the PV surface. The two most common orientations are (1) one axis where the array tracks the sun east to west and (2) two-axis tracking where the array points directly at the sun at all times. Tracking arrays use both the direct and diffuse sunlight. Two-axis tracking arrays capture the maximum possible daily energy.\",\"isNullable\":true,\"name\":\"TrackingArrayIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"TwoAxisTrackingArrayIndicator\"},\"dataType\":\"boolean\",\"description\":\"Two-axis tracking arrays capture the maximum possible daily energy.\",\"isNullable\":true,\"name\":\"TwoAxisTrackingArrayIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"SolarArrayTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Solar Array Type.\",\"isNullable\":true,\"name\":\"SolarArrayTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArray.cdm.json/SolarArray\",\"name\":\"VoltageRegulatorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a voltage regulator.\",\"isNullable\":true,\"name\":\"VoltageRegulatorId\"}]}}}",
+			"Description": "A grouping of multiple solar panels usually all feeding into one solar inverter.\n\nAn interconnected system of PV modules that function as a single electricity-producing unit. The modules are assembled as a discrete structure, with common support or mounting. In smaller systems, an array can consist of a single module.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "SolarArrayId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"ManufacturedByPartyId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ModelNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SerialNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"FixedTiltAngleDegrees\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarArrayWidthMm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarArrayLengthMm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarArrayHeightMm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarArrayWeightKg\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"InstallationDate\",\"type\":\"date\",\"nullable\":true,\"metadata\":{}},{\"name\":\"VoltageV\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CurrentA\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"PowerW\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"TrackingArrayIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"TwoAxisTrackingArrayIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarArrayTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"VoltageRegulatorId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "17b84763-eae8-4522-81fa-c3a8d269f5b1",
+		"Description": "A grouping of multiple solar panels usually all feeding into one solar inverter.\n\nAn interconnected system of PV modules that function as a single electricity-producing unit. The modules are assembled as a discrete structure, with common support or mounting. In smaller systems, an array can consist of a single module."
+	},
+	"type": "TABLE"
+}

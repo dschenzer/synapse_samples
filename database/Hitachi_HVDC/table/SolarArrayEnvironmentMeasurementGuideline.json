@@ -1,0 +1,174 @@
+{
+	"name": "SolarArrayEnvironmentMeasurementGuideline",
+	"properties": {
+		"Name": "SolarArrayEnvironmentMeasurementGuideline",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "EnvironmentalMeasurementTypeId",
+					"Description": "The unique identifier of an environmental measurement type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline",
+						"Name": "EnvironmentalMeasurementTypeId"
+					}
+				},
+				{
+					"Name": "MinimumEnvironmentMeasurementRecommendedUnits",
+					"Description": "The minimum recommended or target measurement of the associated environmental measurement type for the wind turbine.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline",
+						"Name": "MinimumEnvironmentMeasurementRecommendedUnits"
+					}
+				},
+				{
+					"Name": "MaximumEnvironmentMeasurementRecommendedUnits",
+					"Description": "The maximum recommended or target measurement of the associated environmental measurement type for the wind turbine.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline",
+						"Name": "MaximumEnvironmentMeasurementRecommendedUnits"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline",
+						"Name": "UnitOfMeasureId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "813f8ce6-8539-463c-897a-8926993251f7",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayEnvironmentMeasurementGuideline",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayEnvironmentMeasurementGuideline",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarArrayId\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"SolarArrayId\"},\"EnvironmentalMeasurementTypeId\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"EnvironmentalMeasurementTypeId\"},\"MinimumEnvironmentMeasurementRecommendedUnits\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"MinimumEnvironmentMeasurementRecommendedUnits\"},\"MaximumEnvironmentMeasurementRecommendedUnits\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"MaximumEnvironmentMeasurementRecommendedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"UnitOfMeasureId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArrayEnvironmentMeasurementGuideline\",\"path\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\"},\"description\":\"The target or guideline environmental measurement(s) for the associated environmental measurement type.\",\"primaryKey\":[\"SolarArrayId\",\"EnvironmentalMeasurementTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"EnvironmentalMeasurementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an environmental measurement type.\",\"isNullable\":false,\"name\":\"EnvironmentalMeasurementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"MinimumEnvironmentMeasurementRecommendedUnits\"},\"dataType\":\"integer\",\"description\":\"The minimum recommended or target measurement of the associated environmental measurement type for the wind turbine.\",\"isNullable\":true,\"name\":\"MinimumEnvironmentMeasurementRecommendedUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"MaximumEnvironmentMeasurementRecommendedUnits\"},\"dataType\":\"integer\",\"description\":\"The maximum recommended or target measurement of the associated environmental measurement type for the wind turbine.\",\"isNullable\":true,\"name\":\"MaximumEnvironmentMeasurementRecommendedUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentMeasurementGuideline.cdm.json/SolarArrayEnvironmentMeasurementGuideline\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"}]}}}",
+			"Description": "The target or guideline environmental measurement(s) for the associated environmental measurement type.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "SolarArrayId,EnvironmentalMeasurementTypeId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"EnvironmentalMeasurementTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"MinimumEnvironmentMeasurementRecommendedUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumEnvironmentMeasurementRecommendedUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "0fb35d2e-9417-47a3-9198-34743170ea42",
+		"Description": "The target or guideline environmental measurement(s) for the associated environmental measurement type."
+	},
+	"type": "TABLE"
+}

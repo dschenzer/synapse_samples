@@ -1,0 +1,29 @@
+{
+	"name": "relationship-ppwnkhknvs",
+	"properties": {
+		"Name": "relationship-ppwnkhknvs",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "SolarPanel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ManufacturedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"SolarPanel.cdm.json/SolarPanel\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ManufacturedByPartyId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "b46058e3-72af-4874-92e2-1d4cf97155c1"
+	},
+	"type": "RELATIONSHIP"
+}

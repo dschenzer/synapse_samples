@@ -1,0 +1,155 @@
+{
+	"name": "VoltageRegulator",
+	"properties": {
+		"Name": "VoltageRegulator",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "VoltageRegulatorId",
+					"Description": "The unique identifier of a voltage regulator.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "VoltageRegulator.cdm.json/VoltageRegulator",
+						"Name": "VoltageRegulatorId"
+					}
+				},
+				{
+					"Name": "VoltageRegulatorManufacturerId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "VoltageRegulator.cdm.json/VoltageRegulator",
+						"Name": "VoltageRegulatorManufacturerId"
+					}
+				},
+				{
+					"Name": "VoltageRegulatorModelNumber",
+					"Description": "The model of a voltage regulator.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "VoltageRegulator.cdm.json/VoltageRegulator",
+						"Name": "VoltageRegulatorModelNumber"
+					}
+				},
+				{
+					"Name": "SerialNumber",
+					"Description": "The serial number of the voltage regulator.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "VoltageRegulator.cdm.json/VoltageRegulator",
+						"Name": "SerialNumber"
+					}
+				}
+			],
+			"ColumnSetEntityName": "cb901221-34f3-4841-af0d-5b9c90519d1d",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/VoltageRegulator",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/VoltageRegulator",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VoltageRegulatorId\":{\"entity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"name\":\"VoltageRegulatorId\"},\"VoltageRegulatorManufacturerId\":{\"entity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"name\":\"VoltageRegulatorManufacturerId\"},\"VoltageRegulatorModelNumber\":{\"entity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"name\":\"VoltageRegulatorModelNumber\"},\"SerialNumber\":{\"entity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"name\":\"SerialNumber\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VoltageRegulator\",\"path\":\"VoltageRegulator.cdm.json/VoltageRegulator\"},\"description\":\"A device that controls the operating voltage of a photovoltaic array.\",\"primaryKey\":[\"VoltageRegulatorId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"name\":\"VoltageRegulatorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a voltage regulator.\",\"isNullable\":false,\"name\":\"VoltageRegulatorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"name\":\"VoltageRegulatorManufacturerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"VoltageRegulatorManufacturerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"name\":\"VoltageRegulatorModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The model of a voltage regulator.\",\"isNullable\":true,\"name\":\"VoltageRegulatorModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"name\":\"SerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of the voltage regulator.\",\"isNullable\":true,\"name\":\"SerialNumber\"}]}}}",
+			"Description": "A device that controls the operating voltage of a photovoltaic array.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "VoltageRegulatorId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"VoltageRegulatorId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"VoltageRegulatorManufacturerId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"VoltageRegulatorModelNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SerialNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "1d615f56-e19c-4973-886b-b44692de47bf",
+		"Description": "A device that controls the operating voltage of a photovoltaic array."
+	},
+	"type": "TABLE"
+}

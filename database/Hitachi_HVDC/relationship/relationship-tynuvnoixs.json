@@ -1,0 +1,29 @@
+{
+	"name": "relationship-tynuvnoixs",
+	"properties": {
+		"Name": "relationship-tynuvnoixs",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SolarArray",
+		"ToTableName": "SolarArrayTiltAngle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SolarArrayId",
+				"ToColumnName": "SolarArrayId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SolarArray.cdm.json/SolarArray\",\"toEntity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"joinPairs\":[{\"fromAttribute\":\"SolarArrayId\",\"toAttribute\":\"SolarArrayId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "090f5ae8-25b0-4060-89d0-40fe6d87abcc"
+	},
+	"type": "RELATIONSHIP"
+}

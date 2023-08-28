@@ -1,0 +1,20 @@
+{
+	"name": "Load Stage Product DWH",
+	"properties": {
+		"folder": {
+			"name": "AdventureWorks"
+		},
+		"content": {
+			"query": "COPY INTO dbo.StageProduct\n    (ProductID, ProductAlternateKey, ProductName, ProductCategory, Color, Size, ListPrice, Discontinued)\nFROM 'https://schenzersynapse.dfs.core.windows.net/code/synapse/workspaces/SCHENZER-SYNAPSE/StageProduct.csv'\nWITH\n(\n    FILE_TYPE = 'CSV',\n    MAXERRORS = 0,\n    IDENTITY_INSERT = 'OFF',\n    FIRSTROW = 2 --Defines where the first data row starts\n);\n\n\nSELECT COUNT(1) \nFROM dbo.StageProduct\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "AdventureWorksDWH",
+				"poolName": "AdventureWorksDWH"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

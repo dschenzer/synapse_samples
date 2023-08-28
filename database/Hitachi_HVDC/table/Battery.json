@@ -1,0 +1,307 @@
+{
+	"name": "Battery",
+	"properties": {
+		"Name": "Battery",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "BatteryId",
+					"Description": "The unique identifier of a battery.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "BatteryId"
+					}
+				},
+				{
+					"Name": "ManufacturedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "ManufacturedByPartyId"
+					}
+				},
+				{
+					"Name": "ModelNumber",
+					"Description": "The battery model.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "ModelNumber"
+					}
+				},
+				{
+					"Name": "SerialNumber",
+					"Description": "The serial number of the battery.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "SerialNumber"
+					}
+				},
+				{
+					"Name": "ActivatedShelfLifeMonths",
+					"Description": "The activated shelf life of the battery in months.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "ActivatedShelfLifeMonths"
+					}
+				},
+				{
+					"Name": "BatteryCapacityAmpereHours",
+					"Description": "battery capacity - The maximum total electrical charge, expressed in ampere-hours, which a battery can deliver to a load under a specific set of conditions.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "BatteryCapacityAmpereHours"
+					}
+				},
+				{
+					"Name": "ChargeFactorHours",
+					"Description": "A number representing the time in hours during which a battery can be charged at a constant current without damage to the battery. Usually expressed in relation to the total battery capacity, i.e., C/5 indicates a charge factor of 5 hours.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "ChargeFactorHours"
+					}
+				},
+				{
+					"Name": "DeepCycleBatteryIndicator",
+					"Description": "A battery with large plates that can withstand many discharges to a low state-of-charge.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "DeepCycleBatteryIndicator"
+					}
+				},
+				{
+					"Name": "MaintenanceFreeBatteryIndicator",
+					"Description": "A sealed battery to which water cannot be added to maintain electrolyte level.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "MaintenanceFreeBatteryIndicator"
+					}
+				},
+				{
+					"Name": "BatteryTypeId",
+					"Description": "The unique identifier of a battery type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "BatteryTypeId"
+					}
+				},
+				{
+					"Name": "SolarPanelId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "SolarPanelId"
+					}
+				},
+				{
+					"Name": "ChargeControllerId",
+					"Description": "The unique identifier of a charge controller.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Battery.cdm.json/Battery",
+						"Name": "ChargeControllerId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "e85cd344-745b-44ba-ac58-3e6715fab0d5",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/Battery",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/Battery",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BatteryId\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"BatteryId\"},\"ManufacturedByPartyId\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ManufacturedByPartyId\"},\"ModelNumber\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ModelNumber\"},\"SerialNumber\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"SerialNumber\"},\"ActivatedShelfLifeMonths\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ActivatedShelfLifeMonths\"},\"BatteryCapacityAmpereHours\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"BatteryCapacityAmpereHours\"},\"ChargeFactorHours\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ChargeFactorHours\"},\"DeepCycleBatteryIndicator\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"DeepCycleBatteryIndicator\"},\"MaintenanceFreeBatteryIndicator\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"MaintenanceFreeBatteryIndicator\"},\"BatteryTypeId\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"BatteryTypeId\"},\"SolarPanelId\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"SolarPanelId\"},\"ChargeControllerId\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ChargeControllerId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Battery\",\"path\":\"Battery.cdm.json/Battery\"},\"description\":\"A solar battery is one that receives its energy from the sun or from some other light source through the use of photovoltaics\",\"primaryKey\":[\"BatteryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"BatteryId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a battery.\",\"isNullable\":false,\"name\":\"BatteryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ManufacturedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ManufacturedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The battery model.\",\"isNullable\":true,\"name\":\"ModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"SerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of the battery.\",\"isNullable\":true,\"name\":\"SerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ActivatedShelfLifeMonths\"},\"dataType\":\"integer\",\"description\":\"The activated shelf life of the battery in months.\",\"isNullable\":true,\"name\":\"ActivatedShelfLifeMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"BatteryCapacityAmpereHours\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"battery capacity - The maximum total electrical charge, expressed in ampere-hours, which a battery can deliver to a load under a specific set of conditions.\",\"isNullable\":true,\"scale\":8,\"name\":\"BatteryCapacityAmpereHours\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ChargeFactorHours\"},\"dataType\":\"integer\",\"description\":\"A number representing the time in hours during which a battery can be charged at a constant current without damage to the battery. Usually expressed in relation to the total battery capacity, i.e., C/5 indicates a charge factor of 5 hours.\",\"isNullable\":true,\"name\":\"ChargeFactorHours\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"DeepCycleBatteryIndicator\"},\"dataType\":\"boolean\",\"description\":\"A battery with large plates that can withstand many discharges to a low state-of-charge.\",\"isNullable\":true,\"name\":\"DeepCycleBatteryIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"MaintenanceFreeBatteryIndicator\"},\"dataType\":\"boolean\",\"description\":\"A sealed battery to which water cannot be added to maintain electrolyte level.\",\"isNullable\":true,\"name\":\"MaintenanceFreeBatteryIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"BatteryTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a battery type.\",\"isNullable\":true,\"name\":\"BatteryTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"SolarPanelId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":true,\"name\":\"SolarPanelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Battery.cdm.json/Battery\",\"name\":\"ChargeControllerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a charge controller.\",\"isNullable\":true,\"name\":\"ChargeControllerId\"}]}}}",
+			"Description": "A solar battery is one that receives its energy from the sun or from some other light source through the use of photovoltaics",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "BatteryId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"BatteryId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"ManufacturedByPartyId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ModelNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SerialNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ActivatedShelfLifeMonths\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"BatteryCapacityAmpereHours\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ChargeFactorHours\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DeepCycleBatteryIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaintenanceFreeBatteryIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"BatteryTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarPanelId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ChargeControllerId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "4243de6a-1ba7-4fc2-81c9-a70dc9463e6e",
+		"Description": "A solar battery is one that receives its energy from the sun or from some other light source through the use of photovoltaics"
+	},
+	"type": "TABLE"
+}

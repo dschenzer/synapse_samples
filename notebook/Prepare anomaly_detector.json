@@ -1,0 +1,89 @@
+{
+	"name": "Prepare anomaly_detector",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "7a5f52f1-2531-469c-974c-c5ff2ab7ec21"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/de7e7e90-338f-4824-9722-e3ce0c7f4524/resourceGroups/synapse/providers/Microsoft.Synapse/workspaces/schenzer-synapse/bigDataPools/SampleSpark",
+				"name": "SampleSpark",
+				"type": "Spark",
+				"endpoint": "https://schenzer-synapse.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.3",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"from pyspark.sql.functions import lit\n",
+					"\n",
+					"df = spark.createDataFrame([\n",
+					"    (\"1972-01-01T00:00:00Z\", 826.0),\n",
+					"    (\"1972-02-01T00:00:00Z\", 799.0),\n",
+					"    (\"1972-03-01T00:00:00Z\", 890.0),\n",
+					"    (\"1972-04-01T00:00:00Z\", 900.0),\n",
+					"    (\"1972-05-01T00:00:00Z\", 766.0),\n",
+					"    (\"1972-06-01T00:00:00Z\", 805.0),\n",
+					"    (\"1972-07-01T00:00:00Z\", 821.0),\n",
+					"    (\"1972-08-01T00:00:00Z\", 20000.0),\n",
+					"    (\"1972-09-01T00:00:00Z\", 883.0),\n",
+					"    (\"1972-10-01T00:00:00Z\", 898.0),\n",
+					"    (\"1972-11-01T00:00:00Z\", 957.0),\n",
+					"    (\"1972-12-01T00:00:00Z\", 924.0),\n",
+					"    (\"1973-01-01T00:00:00Z\", 881.0),\n",
+					"    (\"1973-02-01T00:00:00Z\", 837.0),\n",
+					"    (\"1973-03-01T00:00:00Z\", 9000.0)\n",
+					"], [\"timestamp\", \"value\"]).withColumn(\"group\", lit(\"series1\"))"
+				],
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"df.write.mode(\"overwrite\").saveAsTable(\"anomaly_detector_testing_data\")"
+				]
+			}
+		]
+	}
+}

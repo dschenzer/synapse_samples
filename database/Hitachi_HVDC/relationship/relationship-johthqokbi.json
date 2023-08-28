@@ -1,0 +1,29 @@
+{
+	"name": "relationship-johthqokbi",
+	"properties": {
+		"Name": "relationship-johthqokbi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "VoltageRegulator",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "VoltageRegulatorManufacturerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"VoltageRegulatorManufacturerId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "8da4cf58-0615-446b-85d2-ae61714d2b93"
+	},
+	"type": "RELATIONSHIP"
+}

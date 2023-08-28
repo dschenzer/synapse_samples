@@ -1,0 +1,29 @@
+{
+	"name": "relationship-mpcjxewrex",
+	"properties": {
+		"Name": "relationship-mpcjxewrex",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SolarArray",
+		"ToTableName": "SolarArrayPeakSunHours",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SolarArrayId",
+				"ToColumnName": "SolarArrayId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SolarArray.cdm.json/SolarArray\",\"toEntity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"joinPairs\":[{\"fromAttribute\":\"SolarArrayId\",\"toAttribute\":\"SolarArrayId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "8d7bf5ae-009f-4dff-8269-1171cfd88e7b"
+	},
+	"type": "RELATIONSHIP"
+}

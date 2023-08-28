@@ -1,0 +1,440 @@
+{
+	"name": "ElectricalNetworkComponent",
+	"properties": {
+		"Name": "ElectricalNetworkComponent",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "ComponentId"
+					}
+				},
+				{
+					"Name": "CurrentPhaseId",
+					"Description": "The unique identifier of a current phase.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "CurrentPhaseId"
+					}
+				},
+				{
+					"Name": "MaximumCurrentRating",
+					"Description": "The maximum current that a piece of electrical equipment is designed to carry or produce.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "MaximumCurrentRating"
+					}
+				},
+				{
+					"Name": "MaximumCurrentRatingUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "MaximumCurrentRatingUomId"
+					}
+				},
+				{
+					"Name": "DropoutVoltageKv",
+					"Description": "The voltage at which a device fails to operate properly or safely",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "DropoutVoltageKv"
+					}
+				},
+				{
+					"Name": "MaximumVoltage",
+					"Description": "The electrical component maximum voltage.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "MaximumVoltage"
+					}
+				},
+				{
+					"Name": "MaximumVoltageUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "MaximumVoltageUomId"
+					}
+				},
+				{
+					"Name": "ElectricNetworkComponentTypeId",
+					"Description": "The unique identifier of an electric Component type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "ElectricNetworkComponentTypeId"
+					}
+				},
+				{
+					"Name": "MaximumContinuousCurrentA",
+					"Description": "The maximum continuous current expressed in Amps of the component.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "MaximumContinuousCurrentA"
+					}
+				},
+				{
+					"Name": "ArrestorTypeId",
+					"Description": "The unique identifier of an arrestor type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "ArrestorTypeId"
+					}
+				},
+				{
+					"Name": "CogenerationTypeId",
+					"Description": "The unique identifier of a cogeneration type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "CogenerationTypeId"
+					}
+				},
+				{
+					"Name": "CogenerationSourceTypeId",
+					"Description": "The unique identifier of a cogeneration source type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "CogenerationSourceTypeId"
+					}
+				},
+				{
+					"Name": "EnergizedEquipmentComponentIndicator",
+					"Description": "Equipment that has voltage potential available within it, such as an electrical panel when the main circuit breaker is switched on.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "EnergizedEquipmentComponentIndicator"
+					}
+				},
+				{
+					"Name": "NameplateRating",
+					"Description": "The electrical specifications provided by the manufacturer of a device.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "NameplateRating"
+					}
+				},
+				{
+					"Name": "VoltageLevelId",
+					"Description": "The unique identifier of a Voltage Level.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "VoltageLevelId"
+					}
+				},
+				{
+					"Name": "TransmissionAreaId",
+					"Description": "The unique identifier of a Transmission Area.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "TransmissionAreaId"
+					}
+				},
+				{
+					"Name": "TerritoryId",
+					"Description": "The unique identifier of a Territory.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "TerritoryId"
+					}
+				},
+				{
+					"Name": "RegionalReferenceConnectivityNodeId",
+					"Description": "The unique identifier of a regional reference connectivity node.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "RegionalReferenceConnectivityNodeId"
+					}
+				},
+				{
+					"Name": "RegionalReferencePricingNodeId",
+					"Description": "The unique identifier of a regional reference pricing node.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent",
+						"Name": "RegionalReferencePricingNodeId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "9d599e79-c4a0-4f54-a0b3-f6a60bbb76a3",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/ElectricalNetworkComponent",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/ElectricalNetworkComponent",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"ComponentId\"},\"CurrentPhaseId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"CurrentPhaseId\"},\"MaximumCurrentRating\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumCurrentRating\"},\"MaximumCurrentRatingUomId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumCurrentRatingUomId\"},\"DropoutVoltageKv\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"DropoutVoltageKv\"},\"MaximumVoltage\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumVoltage\"},\"MaximumVoltageUomId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumVoltageUomId\"},\"ElectricNetworkComponentTypeId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"ElectricNetworkComponentTypeId\"},\"MaximumContinuousCurrentA\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumContinuousCurrentA\"},\"ArrestorTypeId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"ArrestorTypeId\"},\"CogenerationTypeId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"CogenerationTypeId\"},\"CogenerationSourceTypeId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"CogenerationSourceTypeId\"},\"EnergizedEquipmentComponentIndicator\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"EnergizedEquipmentComponentIndicator\"},\"NameplateRating\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"NameplateRating\"},\"VoltageLevelId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"VoltageLevelId\"},\"TransmissionAreaId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"TransmissionAreaId\"},\"TerritoryId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"TerritoryId\"},\"RegionalReferenceConnectivityNodeId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"RegionalReferenceConnectivityNodeId\"},\"RegionalReferencePricingNodeId\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"RegionalReferencePricingNodeId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ElectricalNetworkComponent\",\"path\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\"},\"description\":\"An electrical network component.\",\"primaryKey\":[\"ComponentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"CurrentPhaseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a current phase.\",\"isNullable\":true,\"name\":\"CurrentPhaseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumCurrentRating\"},\"dataType\":\"integer\",\"description\":\"The maximum current that a piece of electrical equipment is designed to carry or produce.\",\"isNullable\":true,\"name\":\"MaximumCurrentRating\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumCurrentRatingUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"MaximumCurrentRatingUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"DropoutVoltageKv\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The voltage at which a device fails to operate properly or safely\",\"isNullable\":true,\"scale\":8,\"name\":\"DropoutVoltageKv\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumVoltage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The electrical component maximum voltage.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumVoltage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumVoltageUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"MaximumVoltageUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"ElectricNetworkComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an electric Component type.\",\"isNullable\":true,\"name\":\"ElectricNetworkComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"MaximumContinuousCurrentA\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum continuous current expressed in Amps of the component.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumContinuousCurrentA\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"ArrestorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an arrestor type.\",\"isNullable\":true,\"name\":\"ArrestorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"CogenerationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a cogeneration type.\",\"isNullable\":true,\"name\":\"CogenerationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"CogenerationSourceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a cogeneration source type.\",\"isNullable\":true,\"name\":\"CogenerationSourceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"EnergizedEquipmentComponentIndicator\"},\"dataType\":\"boolean\",\"description\":\"Equipment that has voltage potential available within it, such as an electrical panel when the main circuit breaker is switched on.\",\"isNullable\":true,\"name\":\"EnergizedEquipmentComponentIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"NameplateRating\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The electrical specifications provided by the manufacturer of a device.\",\"isNullable\":true,\"name\":\"NameplateRating\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"VoltageLevelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Voltage Level.\",\"isNullable\":true,\"name\":\"VoltageLevelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"TransmissionAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transmission Area.\",\"isNullable\":true,\"name\":\"TransmissionAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"TerritoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Territory.\",\"isNullable\":true,\"name\":\"TerritoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"RegionalReferenceConnectivityNodeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a regional reference connectivity node.\",\"isNullable\":true,\"name\":\"RegionalReferenceConnectivityNodeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"name\":\"RegionalReferencePricingNodeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a regional reference pricing node.\",\"isNullable\":true,\"name\":\"RegionalReferencePricingNodeId\"}]}}}",
+			"Description": "An electrical network component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "ComponentId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"ComponentId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"CurrentPhaseId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumCurrentRating\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumCurrentRatingUomId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DropoutVoltageKv\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumVoltage\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumVoltageUomId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ElectricNetworkComponentTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumContinuousCurrentA\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ArrestorTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CogenerationTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CogenerationSourceTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"EnergizedEquipmentComponentIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NameplateRating\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"VoltageLevelId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"TransmissionAreaId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"TerritoryId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"RegionalReferenceConnectivityNodeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"RegionalReferencePricingNodeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "30a203fe-c6a7-4453-b80b-502c236c0928",
+		"Description": "An electrical network component."
+	},
+	"type": "TABLE"
+}

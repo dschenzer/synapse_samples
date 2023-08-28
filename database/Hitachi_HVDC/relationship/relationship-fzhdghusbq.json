@@ -1,0 +1,29 @@
+{
+	"name": "relationship-fzhdghusbq",
+	"properties": {
+		"Name": "relationship-fzhdghusbq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ElectricalNetworkComponent",
+		"ToTableName": "VoltageRegulator",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "VoltageRegulatorId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"toEntity\":\"VoltageRegulator.cdm.json/VoltageRegulator\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"VoltageRegulatorId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "c0cd6e27-a8b8-494c-aa0e-f5bbd8f2be32"
+	},
+	"type": "RELATIONSHIP"
+}

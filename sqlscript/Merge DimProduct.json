@@ -1,0 +1,20 @@
+{
+	"name": "Merge DimProduct",
+	"properties": {
+		"folder": {
+			"name": "AdventureWorks"
+		},
+		"content": {
+			"query": "MERGE dbo.DimProduct AS tgt\n    USING (SELECT ProductID, ProductAlternateKey, ProductName, ProductCategory, Color, Size,\n    ListPrice, Discontinued FROM dbo.StageProduct) AS src\n    ON src.ProductID = tgt.ProductAltKey\nWHEN MATCHED THEN\n    UPDATE SET\n        tgt.ProductKey = src.ProductID,\n        tgt.ProductAltKey = src.ProductID,\n        tgt.ProductName = src.ProductName,\n        tgt.ProductCategory = src.ProductCategory,\n        tgt.Color = src.Color,\n        tgt.Size = src.Size,\n        tgt.ListPrice = src.ListPrice,\n        tgt.Discontinued = src.Discontinued\nWHEN NOT MATCHED THEN\n    INSERT VALUES\n        (src.ProductID,\n         src.ProductID,\n         src.ProductName,\n         src.ProductCategory,\n         src.Color,\n         src.Size,\n         src.ListPrice,\n         src.Discontinued);\n\nALTER INDEX ALL ON dbo.DimProduct REBUILD\n\nCREATE STATISTICS productcategory_stats\nON dbo.DimProduct (ProductCategory);\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "AdventureWorksDWH",
+				"poolName": "AdventureWorksDWH"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,241 @@
+{
+	"name": "Regression -  Flight Delays",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "0672868b-b990-45d0-af9e-ad55d78fc24d"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/de7e7e90-338f-4824-9722-e3ce0c7f4524/resourceGroups/synapse/providers/Microsoft.Synapse/workspaces/schenzer-synapse/bigDataPools/SampleSpark",
+				"name": "SampleSpark",
+				"type": "Spark",
+				"endpoint": "https://schenzer-synapse.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.3",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"import pandas as pd"
+				],
+				"execution_count": 2
+			},
+			{
+				"cell_type": "markdown",
+				"source": [
+					"Next, import the CSV dataset: retrieve the file if needed, save it locally,\n",
+					"read the data into a pandas dataframe via `read_csv()`, then convert it to\n",
+					"a Spark dataframe.\n",
+					"\n",
+					"Print the schema of the dataframe, and note the columns that are `long`."
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"flightDelay = spark.read.parquet(\"wasbs://publicwasb@mmlspark.blob.core.windows.net/On_Time_Performance_2012_9.parquet\")\n",
+					"# print some basic info\n",
+					"print(\"records read: \" + str(flightDelay.count()))\n",
+					"print(\"Schema: \")\n",
+					"flightDelay.printSchema()\n",
+					"flightDelay.limit(10).toPandas()"
+				],
+				"execution_count": 3
+			},
+			{
+				"cell_type": "markdown",
+				"source": [
+					"Use the `DataConversion` transform API to convert the columns listed to\n",
+					"double.\n",
+					"\n",
+					"The `DataConversion` API accepts the following types for the `convertTo`\n",
+					"parameter:\n",
+					"* `boolean`\n",
+					"* `byte`\n",
+					"* `short`\n",
+					"* `integer`\n",
+					"* `long`\n",
+					"* `float`\n",
+					"* `double`\n",
+					"* `string`\n",
+					"* `toCategorical`\n",
+					"* `clearCategorical`\n",
+					"* `date` -- converts a string or long to a date of the format\n",
+					"  \"yyyy-MM-dd HH:mm:ss\" unless another format is specified by\n",
+					"the `dateTimeFormat` parameter.\n",
+					"\n",
+					"Again, print the schema and note that the columns are now `double`\n",
+					"instead of long."
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"from mmlspark.featurize import DataConversion\n",
+					"flightDelay = DataConversion(cols=[\"Quarter\",\"Month\",\"DayofMonth\",\"DayOfWeek\",\n",
+					"                                   \"OriginAirportID\",\"DestAirportID\",\n",
+					"                                   \"CRSDepTime\",\"CRSArrTime\"],\n",
+					"                             convertTo=\"double\") \\\n",
+					"                  .transform(flightDelay)\n",
+					"flightDelay.printSchema()\n",
+					"flightDelay.limit(10).toPandas()"
+				],
+				"execution_count": 4
+			},
+			{
+				"cell_type": "markdown",
+				"source": [
+					"Split the datasest into train and test sets."
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"train, test = flightDelay.randomSplit([0.75, 0.25])"
+				],
+				"execution_count": 5
+			},
+			{
+				"cell_type": "markdown",
+				"source": [
+					"Create a regressor model and train it on the dataset.\n",
+					"\n",
+					"First, use `DataConversion` to convert the columns `Carrier`, `DepTimeBlk`,\n",
+					"and `ArrTimeBlk` to categorical data.  Recall that in Notebook 102, this\n",
+					"was accomplished by iterating over the columns and converting the strings\n",
+					"to index values using the `StringIndexer` API.  The `DataConversion` API\n",
+					"simplifies the task by allowing you to specify all columns that will have\n",
+					"the same end type in a single command.\n",
+					"\n",
+					"Create a LinearRegression model using the Limited-memory BFGS solver\n",
+					"(`l-bfgs`), an `ElasticNet` mixing parameter of `0.3`, and a `Regularization`\n",
+					"of `0.1`.\n",
+					"\n",
+					"Train the model with the `TrainRegressor` API fit on the training dataset."
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"from mmlspark.train import TrainRegressor, TrainedRegressorModel\n",
+					"from pyspark.ml.regression import LinearRegression\n",
+					"\n",
+					"trainCat = DataConversion(cols=[\"Carrier\",\"DepTimeBlk\",\"ArrTimeBlk\"],\n",
+					"                          convertTo=\"toCategorical\") \\\n",
+					"               .transform(train)\n",
+					"testCat  = DataConversion(cols=[\"Carrier\",\"DepTimeBlk\",\"ArrTimeBlk\"],\n",
+					"                          convertTo=\"toCategorical\") \\\n",
+					"               .transform(test)\n",
+					"lr = LinearRegression().setSolver(\"l-bfgs\").setRegParam(0.1) \\\n",
+					"                       .setElasticNetParam(0.3)\n",
+					"model = TrainRegressor(model=lr, labelCol=\"ArrDelay\").fit(trainCat)"
+				],
+				"execution_count": 6
+			},
+			{
+				"cell_type": "markdown",
+				"source": [
+					"Score the regressor on the test data."
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"scoredData = model.transform(testCat)\n",
+					"scoredData.limit(10).toPandas()"
+				],
+				"execution_count": 7
+			},
+			{
+				"cell_type": "markdown",
+				"source": [
+					"Compute model metrics against the entire scored dataset"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"from mmlspark.train import ComputeModelStatistics\n",
+					"metrics = ComputeModelStatistics().transform(scoredData)\n",
+					"metrics.toPandas()"
+				],
+				"execution_count": 8
+			},
+			{
+				"cell_type": "markdown",
+				"source": [
+					"Finally, compute and show statistics on individual predictions in the test\n",
+					"dataset, demonstrating the usage of `ComputePerInstanceStatistics`"
+				]
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"from mmlspark.train import ComputePerInstanceStatistics\n",
+					"evalPerInstance = ComputePerInstanceStatistics().transform(scoredData)\n",
+					"evalPerInstance.select(\"ArrDelay\", \"Scores\", \"L1_loss\", \"L2_loss\") \\\n",
+					"               .limit(10).toPandas()"
+				],
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"spark.stop()"
+				]
+			}
+		]
+	}
+}

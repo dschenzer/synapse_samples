@@ -1,0 +1,25 @@
+{
+	"name": "adworks",
+	"properties": {
+		"Name": "adworks",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 2,
+		"ObjectId": "6266c2f2-249c-44fd-9241-a7d288b9d86d"
+	},
+	"type": "DATABASE"
+}

@@ -1,0 +1,535 @@
+{
+	"name": "Inverter",
+	"properties": {
+		"Name": "Inverter",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "InverterId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "InverterId"
+					}
+				},
+				{
+					"Name": "ManufacturedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "ManufacturedByPartyId"
+					}
+				},
+				{
+					"Name": "ModelNumber",
+					"Description": "The inverter model.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "ModelNumber"
+					}
+				},
+				{
+					"Name": "SerialNumber",
+					"Description": "The serial number of the inverter.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "SerialNumber"
+					}
+				},
+				{
+					"Name": "InverterTypeId",
+					"Description": "The unique identifier of an inverter type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "InverterTypeId"
+					}
+				},
+				{
+					"Name": "DcMaximumPowerKw",
+					"Description": "The DC maximum power in KW.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "DcMaximumPowerKw"
+					}
+				},
+				{
+					"Name": "DcMpptMinimumRangeV",
+					"Description": "The DC MPPT Minimum Range voltage.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "DcMpptMinimumRangeV"
+					}
+				},
+				{
+					"Name": "DcMpptMaximumRangeV",
+					"Description": "The DC MPPT Maximum Range voltage.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "DcMpptMaximumRangeV"
+					}
+				},
+				{
+					"Name": "DcMaximumVoltageV",
+					"Description": "The DC Maximum Voltage.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "DcMaximumVoltageV"
+					}
+				},
+				{
+					"Name": "DcMaximumCurrentA",
+					"Description": "The DC maximum current.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "DcMaximumCurrentA"
+					}
+				},
+				{
+					"Name": "AcRatedPowerKw",
+					"Description": "The AC rated power in Kw",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "AcRatedPowerKw"
+					}
+				},
+				{
+					"Name": "AcMaximumPowerKw",
+					"Description": "The AC maximum power in Kw.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "AcMaximumPowerKw"
+					}
+				},
+				{
+					"Name": "AcMaximumCurrentA",
+					"Description": "The AC maximum current in Amps.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "AcMaximumCurrentA"
+					}
+				},
+				{
+					"Name": "MaximumEfficiencyPercentage",
+					"Description": "The maximum efficiency percentage of the inverter.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "MaximumEfficiencyPercentage"
+					}
+				},
+				{
+					"Name": "InternalConsumptionDuringNighttimeW",
+					"Description": "The nighttime internal power consumption of the inverter in W.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "InternalConsumptionDuringNighttimeW"
+					}
+				},
+				{
+					"Name": "WidthMm",
+					"Description": "The width of the inverter.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "WidthMm"
+					}
+				},
+				{
+					"Name": "LengthMm",
+					"Description": "The length of the inverter.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "LengthMm"
+					}
+				},
+				{
+					"Name": "HeightMm",
+					"Description": "The height of the inverter.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "HeightMm"
+					}
+				},
+				{
+					"Name": "WeightKg",
+					"Description": "The weight of the inverter.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "WeightKg"
+					}
+				},
+				{
+					"Name": "MinimumOperationalTemperatureC",
+					"Description": "The minimum operational temperature in C.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "MinimumOperationalTemperatureC"
+					}
+				},
+				{
+					"Name": "MaximumOperationalTemperatureC",
+					"Description": "The maximum operational temperature in C.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "MaximumOperationalTemperatureC"
+					}
+				},
+				{
+					"Name": "WarrantyPeriodMonths",
+					"Description": "The warranty period in months.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "WarrantyPeriodMonths"
+					}
+				},
+				{
+					"Name": "RequiresTransformerIndicator",
+					"Description": "Indicates that the inverter requires a transformer.",
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "RequiresTransformerIndicator"
+					}
+				},
+				{
+					"Name": "InverterCoolingMethodId",
+					"Description": "The unique identifier of an Inverter Cooling Method.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "Inverter.cdm.json/Inverter",
+						"Name": "InverterCoolingMethodId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "fac7046d-ddb3-457d-a18d-de2ded812041",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/Inverter",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/Inverter",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InverterId\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"InverterId\"},\"ManufacturedByPartyId\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"ManufacturedByPartyId\"},\"ModelNumber\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"ModelNumber\"},\"SerialNumber\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"SerialNumber\"},\"InverterTypeId\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"InverterTypeId\"},\"DcMaximumPowerKw\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMaximumPowerKw\"},\"DcMpptMinimumRangeV\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMpptMinimumRangeV\"},\"DcMpptMaximumRangeV\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMpptMaximumRangeV\"},\"DcMaximumVoltageV\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMaximumVoltageV\"},\"DcMaximumCurrentA\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMaximumCurrentA\"},\"AcRatedPowerKw\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"AcRatedPowerKw\"},\"AcMaximumPowerKw\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"AcMaximumPowerKw\"},\"AcMaximumCurrentA\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"AcMaximumCurrentA\"},\"MaximumEfficiencyPercentage\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"MaximumEfficiencyPercentage\"},\"InternalConsumptionDuringNighttimeW\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"InternalConsumptionDuringNighttimeW\"},\"WidthMm\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"WidthMm\"},\"LengthMm\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"LengthMm\"},\"HeightMm\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"HeightMm\"},\"WeightKg\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"WeightKg\"},\"MinimumOperationalTemperatureC\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"MinimumOperationalTemperatureC\"},\"MaximumOperationalTemperatureC\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"MaximumOperationalTemperatureC\"},\"WarrantyPeriodMonths\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"WarrantyPeriodMonths\"},\"RequiresTransformerIndicator\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"RequiresTransformerIndicator\"},\"InverterCoolingMethodId\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"InverterCoolingMethodId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Inverter\",\"path\":\"Inverter.cdm.json/Inverter\"},\"description\":\"Inverters are solid state electronic devices that convert DC electricity generated by the PV modules into AC electricity, suitable for supply to the grid. In addition, inverters can also perform a range of functions to maximize the output of a PV plant.\\n\\nIn general, there are two main classes of inverters: central inverters and string inverters. Central inverters are connected to a number of parallel strings of modules. String inverters are connected to one or more series strings. While numerous string inverters are required for a large plant, individual inverters are smaller and more easily maintained than a central inverter.\\n\\nThere are two broad classes of inverters: central inverters  and string inverters. The central inverter configuration shown in Figure 6 remains the first choice for many medium and large scale solar PV plants. A large number of modules are connected in series to form a high voltage string. Strings are then connected in parallel to the inverter. Central inverters offer high reliability and simplicity of installation. However, they have disadvantages: increased mismatch losses[16] and absence of maximum power point tracking[17] (MPPT) for each string. This may cause problems for arrays that have multiple tilt and orientation angles, suffer from shading, or use different module types.\\n\\nCentral inverters are usually three-phase and can include grid frequency transformers. These transformers increase the weight and volume of the inverters although they provide galvanic isolation from the grid. In other words, there is no electrical connection between the input and output voltages-a condition that is sometimes required by national electrical safety regulations.\\n\\nCentral inverters are sometimes used in a \\\"master slave\\\" configuration. This means that some inverters shut down when the irradiance is low, allowing the other inverters to run more closely to optimal loading. When the irradiance is high, the load is shared by all inverters. In effect, only the required number of inverters is in operation at any one time. As the operating time is distributed uniformly among the inverters, design life can be extended.\\n\\nIn contrast, the string inverter concept uses multiple inverters for multiple strings of modules. String inverters are increasingly being used as they can cover a very wide power range and can be manufactured more cheaply in a production line than central inverters. Additionally, they provide MPPT on a string level with all strings being independent of each other. This is useful in cases where modules cannot be installed with the same orientation, where modules of different specifications are being used, or when there are shading issues. String inverters, which are usually in single phase, also have other advantages. For one, they can be serviced and replaced by non-specialist personnel. For another, it is practical to keep spare string inverters on site. This makes it easy to handle unforeseen circumstances, as in the case of an inverter failure. In comparison, the failure of a large central inverter-with a long lead time for repair-can lead to significant yield loss before it can be replaced.\\n\\nInverters may be transformerless or include a transformer to step up the voltage. Transformerless inverters generally have a higher efficiency, as they do not include transformer losses.\\n\\nSolar inverters or PV inverters for photovoltaic systems transform DC-power generated from the solar modules into AC power and feed this power into the network.\",\"primaryKey\":[\"InverterId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"InverterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"InverterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"ManufacturedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ManufacturedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"ModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The inverter model.\",\"isNullable\":true,\"name\":\"ModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"SerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of the inverter.\",\"isNullable\":true,\"name\":\"SerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"InverterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an inverter type.\",\"isNullable\":true,\"name\":\"InverterTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMaximumPowerKw\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The DC maximum power in KW.\",\"isNullable\":true,\"scale\":8,\"name\":\"DcMaximumPowerKw\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMpptMinimumRangeV\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The DC MPPT Minimum Range voltage.\",\"isNullable\":true,\"scale\":8,\"name\":\"DcMpptMinimumRangeV\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMpptMaximumRangeV\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The DC MPPT Maximum Range voltage.\",\"isNullable\":true,\"scale\":8,\"name\":\"DcMpptMaximumRangeV\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMaximumVoltageV\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The DC Maximum Voltage.\",\"isNullable\":true,\"scale\":8,\"name\":\"DcMaximumVoltageV\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"DcMaximumCurrentA\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The DC maximum current.\",\"isNullable\":true,\"scale\":8,\"name\":\"DcMaximumCurrentA\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"AcRatedPowerKw\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The AC rated power in Kw\",\"isNullable\":true,\"scale\":8,\"name\":\"AcRatedPowerKw\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"AcMaximumPowerKw\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The AC maximum power in Kw.\",\"isNullable\":true,\"scale\":8,\"name\":\"AcMaximumPowerKw\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"AcMaximumCurrentA\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The AC maximum current in Amps.\",\"isNullable\":true,\"scale\":8,\"name\":\"AcMaximumCurrentA\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"MaximumEfficiencyPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum efficiency percentage of the inverter.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumEfficiencyPercentage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"InternalConsumptionDuringNighttimeW\"},\"dataType\":\"integer\",\"description\":\"The nighttime internal power consumption of the inverter in W.\",\"isNullable\":true,\"name\":\"InternalConsumptionDuringNighttimeW\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"WidthMm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The width of the inverter.\",\"isNullable\":true,\"scale\":8,\"name\":\"WidthMm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"LengthMm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The length of the inverter.\",\"isNullable\":true,\"scale\":8,\"name\":\"LengthMm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"HeightMm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The height of the inverter.\",\"isNullable\":true,\"scale\":8,\"name\":\"HeightMm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"WeightKg\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The weight of the inverter.\",\"isNullable\":true,\"scale\":8,\"name\":\"WeightKg\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"MinimumOperationalTemperatureC\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The minimum operational temperature in C.\",\"isNullable\":true,\"scale\":8,\"name\":\"MinimumOperationalTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"MaximumOperationalTemperatureC\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum operational temperature in C.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumOperationalTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"WarrantyPeriodMonths\"},\"dataType\":\"integer\",\"description\":\"The warranty period in months.\",\"isNullable\":true,\"name\":\"WarrantyPeriodMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"RequiresTransformerIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the inverter requires a transformer.\",\"isNullable\":true,\"name\":\"RequiresTransformerIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Inverter.cdm.json/Inverter\",\"name\":\"InverterCoolingMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Inverter Cooling Method.\",\"isNullable\":true,\"name\":\"InverterCoolingMethodId\"}]}}}",
+			"Description": "Inverters are solid state electronic devices that convert DC electricity generated by the PV modules into AC electricity, suitable for supply to the grid. In addition, inverters can also perform a range of functions to maximize the output of a PV plant.\n\nIn general, there are two main classes of inverters: central inverters and string inverters. Central inverters are connected to a number of parallel strings of modules. String inverters are connected to one or more series strings. While numerous string inverters are required for a large plant, individual inverters are smaller and more easily maintained than a central inverter.\n\nThere are two broad classes of inverters: central inverters  and string inverters. The central inverter configuration shown in Figure 6 remains the first choice for many medium and large scale solar PV plants. A large number of modules are connected in series to form a high voltage string. Strings are then connected in parallel to the inverter. Central inverters offer high reliability and simplicity of installation. However, they have disadvantages: increased mismatch losses[16] and absence of maximum power point tracking[17] (MPPT) for each string. This may cause problems for arrays that have multiple tilt and orientation angles, suffer from shading, or use different module types.\n\nCentral inverters are usually three-phase and can include grid frequency transformers. These transformers increase the weight and volume of the inverters although they provide galvanic isolation from the grid. In other words, there is no electrical connection between the input and output voltages-a condition that is sometimes required by national electrical safety regulations.\n\nCentral inverters are sometimes used in a \"master slave\" configuration. This means that some inverters shut down when the irradiance is low, allowing the other inverters to run more closely to optimal loading. When the irradiance is high, the load is shared by all inverters. In effect, only the required number of inverters is in operation at any one time. As the operating time is distributed uniformly among the inverters, design life can be extended.\n\nIn contrast, the string inverter concept uses multiple inverters for multiple strings of modules. String inverters are increasingly being used as they can cover a very wide power range and can be manufactured more cheaply in a production line than central inverters. Additionally, they provide MPPT on a string level with all strings being independent of each other. This is useful in cases where modules cannot be installed with the same orientation, where modules of different specifications are being used, or when there are shading issues. String inverters, which are usually in single phase, also have other advantages. For one, they can be serviced and replaced by non-specialist personnel. For another, it is practical to keep spare string inverters on site. This makes it easy to handle unforeseen circumstances, as in the case of an inverter failure. In comparison, the failure of a large central inverter-with a long lead time for repair-can lead to significant yield loss before it can be replaced.\n\nInverters may be transformerless or include a transformer to step up the voltage. Transformerless inverters generally have a higher efficiency, as they do not include transformer losses.\n\nSolar inverters or PV inverters for photovoltaic systems transform DC-power generated from the solar modules into AC power and feed this power into the network.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "InverterId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"InverterId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"ManufacturedByPartyId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ModelNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SerialNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"InverterTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DcMaximumPowerKw\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DcMpptMinimumRangeV\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DcMpptMaximumRangeV\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DcMaximumVoltageV\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DcMaximumCurrentA\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AcRatedPowerKw\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AcMaximumPowerKw\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AcMaximumCurrentA\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumEfficiencyPercentage\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"InternalConsumptionDuringNighttimeW\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"WidthMm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"LengthMm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"HeightMm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"WeightKg\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MinimumOperationalTemperatureC\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumOperationalTemperatureC\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"WarrantyPeriodMonths\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"RequiresTransformerIndicator\",\"type\":\"boolean\",\"nullable\":true,\"metadata\":{}},{\"name\":\"InverterCoolingMethodId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "5ee6a52e-82f0-4bb0-a727-6fd11e642ecb",
+		"Description": "Inverters are solid state electronic devices that convert DC electricity generated by the PV modules into AC electricity, suitable for supply to the grid. In addition, inverters can also perform a range of functions to maximize the output of a PV plant.\n\nIn general, there are two main classes of inverters: central inverters and string inverters. Central inverters are connected to a number of parallel strings of modules. String inverters are connected to one or more series strings. While numerous string inverters are required for a large plant, individual inverters are smaller and more easily maintained than a central inverter.\n\nThere are two broad classes of inverters: central inverters  and string inverters. The central inverter configuration shown in Figure 6 remains the first choice for many medium and large scale solar PV plants. A large number of modules are connected in series to form a high voltage string. Strings are then connected in parallel to the inverter. Central inverters offer high reliability and simplicity of installation. However, they have disadvantages: increased mismatch losses[16] and absence of maximum power point tracking[17] (MPPT) for each string. This may cause problems for arrays that have multiple tilt and orientation angles, suffer from shading, or use different module types.\n\nCentral inverters are usually three-phase and can include grid frequency transformers. These transformers increase the weight and volume of the inverters although they provide galvanic isolation from the grid. In other words, there is no electrical connection between the input and output voltages-a condition that is sometimes required by national electrical safety regulations.\n\nCentral inverters are sometimes used in a \"master slave\" configuration. This means that some inverters shut down when the irradiance is low, allowing the other inverters to run more closely to optimal loading. When the irradiance is high, the load is shared by all inverters. In effect, only the required number of inverters is in operation at any one time. As the operating time is distributed uniformly among the inverters, design life can be extended.\n\nIn contrast, the string inverter concept uses multiple inverters for multiple strings of modules. String inverters are increasingly being used as they can cover a very wide power range and can be manufactured more cheaply in a production line than central inverters. Additionally, they provide MPPT on a string level with all strings being independent of each other. This is useful in cases where modules cannot be installed with the same orientation, where modules of different specifications are being used, or when there are shading issues. String inverters, which are usually in single phase, also have other advantages. For one, they can be serviced and replaced by non-specialist personnel. For another, it is practical to keep spare string inverters on site. This makes it easy to handle unforeseen circumstances, as in the case of an inverter failure. In comparison, the failure of a large central inverter-with a long lead time for repair-can lead to significant yield loss before it can be replaced.\n\nInverters may be transformerless or include a transformer to step up the voltage. Transformerless inverters generally have a higher efficiency, as they do not include transformer losses.\n\nSolar inverters or PV inverters for photovoltaic systems transform DC-power generated from the solar modules into AC power and feed this power into the network."
+	},
+	"type": "TABLE"
+}

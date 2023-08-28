@@ -1,0 +1,176 @@
+{
+	"name": "DirectNormalIrradiance",
+	"properties": {
+		"Name": "DirectNormalIrradiance",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DirectNormalIrradiance.cdm.json/DirectNormalIrradiance",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DirectNormalIrradiance.cdm.json/DirectNormalIrradiance",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DirectNormalIrradiance.cdm.json/DirectNormalIrradiance",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "DniMeasurementUnits",
+					"Description": "The number of measurement units recorded.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DirectNormalIrradiance.cdm.json/DirectNormalIrradiance",
+						"Name": "DniMeasurementUnits"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DirectNormalIrradiance.cdm.json/DirectNormalIrradiance",
+						"Name": "UnitOfMeasureId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "4dadafb7-9440-42b6-8446-8710ada6c626",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/DirectNormalIrradiance",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/DirectNormalIrradiance",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarArrayId\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"SolarArrayId\"},\"PeriodStartTimestamp\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"PeriodEndTimestamp\"},\"DniMeasurementUnits\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"DniMeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"UnitOfMeasureId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DirectNormalIrradiance\",\"path\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\"},\"description\":\"DNI is the total solar energy received on a unit area of surface directly facing the sun at all times. \\n\\nThe DNI is of particular interest for solar installations that track the sun and for concentrating solar technologies (as concentrating technologies can only make use of the direct component of irradiation).\",\"primaryKey\":[\"SolarArrayId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"DniMeasurementUnits\"},\"dataType\":\"integer\",\"description\":\"The number of measurement units recorded.\",\"isNullable\":true,\"name\":\"DniMeasurementUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DirectNormalIrradiance.cdm.json/DirectNormalIrradiance\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"}]}}}",
+			"Description": "DNI is the total solar energy received on a unit area of surface directly facing the sun at all times. \n\nThe DNI is of particular interest for solar installations that track the sun and for concentrating solar technologies (as concentrating technologies can only make use of the direct component of irradiation).",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "SolarArrayId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DniMeasurementUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "dd939fb5-ca26-4a3f-8c92-5f433db53a42",
+		"Description": "DNI is the total solar energy received on a unit area of surface directly facing the sun at all times. \n\nThe DNI is of particular interest for solar installations that track the sun and for concentrating solar technologies (as concentrating technologies can only make use of the direct component of irradiation)."
+	},
+	"type": "TABLE"
+}

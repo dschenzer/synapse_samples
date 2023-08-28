@@ -1,0 +1,17 @@
+{
+	"name": "ShowNations",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP 100 * FROM dbo.nation\nGo",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tpc",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

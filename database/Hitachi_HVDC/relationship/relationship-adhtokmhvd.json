@@ -1,0 +1,29 @@
+{
+	"name": "relationship-adhtokmhvd",
+	"properties": {
+		"Name": "relationship-adhtokmhvd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ElectricalNetworkComponent",
+		"ToTableName": "SolarArray",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "SolarArrayId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"toEntity\":\"SolarArray.cdm.json/SolarArray\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"SolarArrayId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "af1a33fb-7a20-41ea-8b2d-b01e5df5d40c"
+	},
+	"type": "RELATIONSHIP"
+}

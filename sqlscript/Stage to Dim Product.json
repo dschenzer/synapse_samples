@@ -1,0 +1,20 @@
+{
+	"name": "Stage to Dim Product",
+	"properties": {
+		"folder": {
+			"name": "AdventureWorks"
+		},
+		"content": {
+			"query": "CREATE TABLE dbo.DimProduct\nWITH\n(\n    DISTRIBUTION = HASH(ProductAltKey),\n    CLUSTERED COLUMNSTORE INDEX\n)\nAS\nSELECT ROW_NUMBER() OVER(ORDER BY ProductID) AS ProductKey,\n       ProductID AS ProductAltKey,\n       ProductName,\n       ProductCategory,\n       Color,\n       Size,\n       ListPrice,\n       Discontinued\nFROM dbo.StageProduct\nWHERE Color != 'NA' -- Pull Everything except undefined colors\n\nSELECT ProductKey,\n    ProductAltKey,\n    ProductName,\n    ProductCategory,\n    Color,\n    Size,\n    ListPrice,\n    Discontinued\nFROM dbo.DimProduct",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "AdventureWorksDWH",
+				"poolName": "AdventureWorksDWH"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

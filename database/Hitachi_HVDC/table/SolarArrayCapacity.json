@@ -1,0 +1,157 @@
+{
+	"name": "SolarArrayCapacity",
+	"properties": {
+		"Name": "SolarArrayCapacity",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayCapacity.cdm.json/SolarArrayCapacity",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayCapacity.cdm.json/SolarArrayCapacity",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayCapacity.cdm.json/SolarArrayCapacity",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "CapacityW",
+					"Description": "The measure of a solar power system's output, usually in peak conditions. Capacity is usually measured in Watts (W) or kilowatts (kW). 1kW = 1000W. Amps * Volts = Watts.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayCapacity.cdm.json/SolarArrayCapacity",
+						"Name": "CapacityW"
+					}
+				}
+			],
+			"ColumnSetEntityName": "7bf0b615-e3d9-4075-87ac-5eedd2e79b2a",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayCapacity",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayCapacity",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PeriodStartTimestamp\":{\"entity\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\",\"name\":\"PeriodStartTimestamp\"},\"SolarArrayId\":{\"entity\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\",\"name\":\"SolarArrayId\"},\"PeriodEndTimestamp\":{\"entity\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\",\"name\":\"PeriodEndTimestamp\"},\"CapacityW\":{\"entity\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\",\"name\":\"CapacityW\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArrayCapacity\",\"path\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\"},\"description\":\"The measure of a solar power system's output, usually in peak conditions. Capacity is usually measured in Watts (W) or kilowatts (kW). 1kW = 1000W. Amps * Volts = Watts.\",\"primaryKey\":[\"PeriodStartTimestamp\",\"SolarArrayId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayCapacity.cdm.json/SolarArrayCapacity\",\"name\":\"CapacityW\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The measure of a solar power system's output, usually in peak conditions. Capacity is usually measured in Watts (W) or kilowatts (kW). 1kW = 1000W. Amps * Volts = Watts.\",\"isNullable\":true,\"scale\":8,\"name\":\"CapacityW\"}]}}}",
+			"Description": "The measure of a solar power system's output, usually in peak conditions. Capacity is usually measured in Watts (W) or kilowatts (kW). 1kW = 1000W. Amps * Volts = Watts.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "PeriodStartTimestamp,SolarArrayId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CapacityW\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "0b2d741d-a670-4566-9f5e-554c6a9241a0",
+		"Description": "The measure of a solar power system's output, usually in peak conditions. Capacity is usually measured in Watts (W) or kilowatts (kW). 1kW = 1000W. Amps * Volts = Watts."
+	},
+	"type": "TABLE"
+}

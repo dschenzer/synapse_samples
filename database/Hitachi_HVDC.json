@@ -1,0 +1,27 @@
+{
+	"name": "Hitachi_HVDC",
+	"properties": {
+		"Name": "Hitachi_HVDC",
+		"EntityType": "DATABASE",
+		"Description": "",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Utilities\",\"Version\":\"1.3.0\"}}}",
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 2,
+		"ObjectId": "3adfd0c6-b4bd-4daa-bca9-9eff87cc949d"
+	},
+	"type": "DATABASE"
+}

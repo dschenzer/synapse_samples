@@ -1,0 +1,176 @@
+{
+	"name": "SolarArrayEvent",
+	"properties": {
+		"Name": "SolarArrayEvent",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarArrayEventTypeId",
+					"Description": "The unique identifier of a Solar Array Event Type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEvent.cdm.json/SolarArrayEvent",
+						"Name": "SolarArrayEventTypeId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The event period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEvent.cdm.json/SolarArrayEvent",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEvent.cdm.json/SolarArrayEvent",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The event period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEvent.cdm.json/SolarArrayEvent",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "SolarArrayEventNote",
+					"Description": "A note, comment or additional information regarding the solar array event.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEvent.cdm.json/SolarArrayEvent",
+						"Name": "SolarArrayEventNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "321127b1-b745-43fb-815a-5bcc9085122c",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayEvent",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayEvent",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarArrayEventTypeId\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"SolarArrayEventTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"PeriodStartTimestamp\"},\"SolarArrayId\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"SolarArrayId\"},\"PeriodEndTimestamp\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"PeriodEndTimestamp\"},\"SolarArrayEventNote\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"SolarArrayEventNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArrayEvent\",\"path\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\"},\"description\":\"An event related to a solar array.\",\"primaryKey\":[\"SolarArrayEventTypeId\",\"PeriodStartTimestamp\",\"SolarArrayId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"SolarArrayEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Solar Array Event Type.\",\"isNullable\":false,\"name\":\"SolarArrayEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The event period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The event period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEvent.cdm.json/SolarArrayEvent\",\"name\":\"SolarArrayEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the solar array event.\",\"isNullable\":true,\"name\":\"SolarArrayEventNote\"}]}}}",
+			"Description": "An event related to a solar array.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "SolarArrayEventTypeId,PeriodStartTimestamp,SolarArrayId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarArrayEventTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarArrayEventNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "d67eb3be-3f14-4dd3-a002-e9621707c186",
+		"Description": "An event related to a solar array."
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,29 @@
+{
+	"name": "relationship-onlqahbpmv",
+	"properties": {
+		"Name": "relationship-onlqahbpmv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Inverter",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ManufacturedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Inverter.cdm.json/Inverter\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ManufacturedByPartyId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "989fcb73-3487-4e42-a272-a50c430918c9"
+	},
+	"type": "RELATIONSHIP"
+}

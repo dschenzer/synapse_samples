@@ -1,0 +1,20 @@
+{
+	"name": "Monitor DWH",
+	"properties": {
+		"folder": {
+			"name": "Taxi"
+		},
+		"content": {
+			"query": "-- Progress\nselect type,pdw_node_id,status,count(*) as threads,sum(bytes_processed/(1024*1024)) as size_mb , \nsum(rows_processed) as total_row ,avg(total_elapsed_time) as avg_elapsed_time from [sys].[dm_pdw_dms_workers] \nwhere request_id ='QID497' group by type,pdw_node_id,status;\n;\n\nselect  ab.request_id, ab.step_index,ab.operation_type,ab.location_type,\n        ab.status,\n        ab.error_id,\n        ab.start_time,\n        ab.end_time,\n        ef.type as DMStype,\n        ef.status as DMSstatus,\n        ef.numthreads as DMSthreads,\n        ab.command, ef.sum_bytes_processed , ef.max_bytes_processed ,\n        ef.min_bytes_processed ,\nef.sum_rows_processed ,ef.min_rows_processed ,\n        ef.max_rows_processed ,\n        ef.sum_total_time,\n        \nef.max_total_time,ef.min_total_time\nfrom    sys.dm_pdw_request_steps ab \ninner join (\n        select  b.request_id,b.step_index , b.type,status ,count(*) as numthreads, sum(cast(b.bytes_processed as bigint)) as sum_bytes_processed ,\n                max(b.bytes_processed) as max_bytes_processed ,\n                min(b.bytes_processed) as min_bytes_processed ,\n        sum(cast(b.rows_processed as bigint))  as sum_rows_processed , min(b.rows_processed) as min_rows_processed ,\n                max(b.rows_processed) as max_rows_processed ,\n                sum(cast(b.total_elapsed_time as bigint))  as sum_total_time,\n                max(b.total_elapsed_time)  as max_total_time,\n        min(b.total_elapsed_time) as min_total_time\n          from  sys.dm_pdw_dms_workers b\n        group by \n          b.request_id,b.step_index , b.type,b.status ) ef \n    on  ab.request_id=ef.request_id  and ab.step_index=ef.step_index\n    inner join (select request_id FROM sys.dm_pdw_exec_requests \n    where   status not in  ('Completed','Failed','Cancelled') and session_id <> session_id()) er\n    ON ab.request_id=er.request_id;\n\n\n-- Monitor Polybase\nSELECT\n    r.command,\n    s.request_id,\n    r.status,\n    count(distinct input_name) as nbr_files,\n    sum(s.bytes_processed)/1024/1024/1024 as gb_processed\nFROM\n    sys.dm_pdw_exec_requests r\n    inner join sys.dm_pdw_dms_external_work s\n        on r.request_id = s.request_id\nGROUP BY\n    r.command,\n    s.request_id,\n    r.status\nORDER BY\n    nbr_files desc,\n    gb_processed desc;\n\n\nSELECT  r.[request_id]                           \n,       r.[status]                               \n,       r.resource_class                         \n,       r.command\n,       sum(bytes_processed) AS bytes_processed\n,       sum(rows_processed) AS rows_processed\t\nFROM sys.dm_pdw_exec_requests r\n              JOIN sys.dm_pdw_dms_workers w\n                     ON r.[request_id] = w.request_id\nWHERE [label] = 'COPY : Load [dbo].[Date] - Taxi dataset' OR\n    [label] = 'COPY : Load [dbo].[Geography] - Taxi dataset' OR\n    [label] = 'COPY : Load [dbo].[HackneyLicense] - Taxi dataset' OR\n    [label] = 'COPY : Load [dbo].[Medallion] - Taxi dataset' OR\n    [label] = 'COPY : Load [dbo].[Time] - Taxi dataset' OR\n    [label] = 'COPY : Load [dbo].[Weather] - Taxi dataset' OR\n    [label] = 'COPY : Load [dbo].[Trip] - Taxi dataset' \n--and session_id <> session_id() and type = 'WRITER'\nGROUP BY r.[request_id]                           \n,       r.[status]                               \n,       r.resource_class                         \n,       r.command;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "AdventureWorksDWH",
+				"poolName": "AdventureWorksDWH"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

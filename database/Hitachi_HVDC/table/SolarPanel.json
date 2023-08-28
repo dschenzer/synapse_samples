@@ -1,0 +1,573 @@
+{
+	"name": "SolarPanel",
+	"properties": {
+		"Name": "SolarPanel",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarPanelId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "SolarPanelId"
+					}
+				},
+				{
+					"Name": "FixedTiltAngleDegrees",
+					"Description": "The fixed tilt degree angle of the solar panel.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "FixedTiltAngleDegrees"
+					}
+				},
+				{
+					"Name": "SolarPanelWidthMm",
+					"Description": "The width of the solar panel.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "SolarPanelWidthMm"
+					}
+				},
+				{
+					"Name": "SolarPanelLengthMm",
+					"Description": "The length of the solar panel.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "SolarPanelLengthMm"
+					}
+				},
+				{
+					"Name": "ModelNumber",
+					"Description": "The model of the solar panel.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "ModelNumber"
+					}
+				},
+				{
+					"Name": "PeakPowerW",
+					"Description": "The peak power of the solar panel in W.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "PeakPowerW"
+					}
+				},
+				{
+					"Name": "OptimalOperatingVoltage",
+					"Description": "The optimal operating voltage of the solar panel.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "OptimalOperatingVoltage"
+					}
+				},
+				{
+					"Name": "OptimalOperatingCurrentAmps",
+					"Description": "The optimal operating current of the solar panel in A.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "OptimalOperatingCurrentAmps"
+					}
+				},
+				{
+					"Name": "ShortCircuitCurrentAmps",
+					"Description": "The solar panel short-circuit current in A.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "ShortCircuitCurrentAmps"
+					}
+				},
+				{
+					"Name": "OpenCircuitVoltageV",
+					"Description": "The solar panel open-circuit voltage.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "OpenCircuitVoltageV"
+					}
+				},
+				{
+					"Name": "MaximumSystemVoltageV",
+					"Description": "The solar panel maximum system voltage.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "MaximumSystemVoltageV"
+					}
+				},
+				{
+					"Name": "MinimumOperatingTemperatureC",
+					"Description": "The solar panel minimum operating temperature  in C.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "MinimumOperatingTemperatureC"
+					}
+				},
+				{
+					"Name": "MaximumOperatingTemperatureC",
+					"Description": "The solar panel maximum operating temperature  in C.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "MaximumOperatingTemperatureC"
+					}
+				},
+				{
+					"Name": "WarrantyPeriodMonths",
+					"Description": "The warranty period in months.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "WarrantyPeriodMonths"
+					}
+				},
+				{
+					"Name": "MountingStructureTypeId",
+					"Description": "The unique identifier of a mounting structure type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "MountingStructureTypeId"
+					}
+				},
+				{
+					"Name": "SolarPanelAirmassUnitsAm",
+					"Description": "A unit of atmospheric mass measurement commonly used in discussion of rating solar photovoltaic panels. The AM measurement for photovoltaic solar panels at standard test conditions (STC) is 1.5AM.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "SolarPanelAirmassUnitsAm"
+					}
+				},
+				{
+					"Name": "PhotovoltaicModuleConstructionTypeId",
+					"Description": "The unique identifier of a Photovoltaic Module Construction Type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "PhotovoltaicModuleConstructionTypeId"
+					}
+				},
+				{
+					"Name": "ManufacturedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "ManufacturedByPartyId"
+					}
+				},
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "SolarPanelWeightKg",
+					"Description": "The solar panel weight in kg.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "SolarPanelWeightKg"
+					}
+				},
+				{
+					"Name": "AverageAnnualEnergyProductionKwh",
+					"Description": "The total energy generated annually by a power station, on average over a period of time of full operation or since the start of full operation, measured in kilowatt-hours.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "AverageAnnualEnergyProductionKwh"
+					}
+				},
+				{
+					"Name": "MaximumSeriesFuseRatingA",
+					"Description": "The maximum fuse rating in amps.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "MaximumSeriesFuseRatingA"
+					}
+				},
+				{
+					"Name": "NumberOfSolarCells",
+					"Description": "The number of solar cells in the solar panel.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "NumberOfSolarCells"
+					}
+				},
+				{
+					"Name": "CutoffVoltage",
+					"Description": "The voltage levels (activation) at which the charge controller disconnects the photovoltaic array from the battery or the load from the battery.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "CutoffVoltage"
+					}
+				},
+				{
+					"Name": "RatedPowerW",
+					"Description": "The solar panels rated power expressed in watts.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "RatedPowerW"
+					}
+				},
+				{
+					"Name": "SolarCellTypeId",
+					"Description": "The unique identifier of a solar cell type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPanel.cdm.json/SolarPanel",
+						"Name": "SolarCellTypeId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "6b4f294a-27a4-47fc-a196-d389807223a0",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarPanel",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarPanel",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarPanelId\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelId\"},\"FixedTiltAngleDegrees\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"FixedTiltAngleDegrees\"},\"SolarPanelWidthMm\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelWidthMm\"},\"SolarPanelLengthMm\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelLengthMm\"},\"ModelNumber\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"ModelNumber\"},\"PeakPowerW\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"PeakPowerW\"},\"OptimalOperatingVoltage\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"OptimalOperatingVoltage\"},\"OptimalOperatingCurrentAmps\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"OptimalOperatingCurrentAmps\"},\"ShortCircuitCurrentAmps\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"ShortCircuitCurrentAmps\"},\"OpenCircuitVoltageV\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"OpenCircuitVoltageV\"},\"MaximumSystemVoltageV\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MaximumSystemVoltageV\"},\"MinimumOperatingTemperatureC\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MinimumOperatingTemperatureC\"},\"MaximumOperatingTemperatureC\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MaximumOperatingTemperatureC\"},\"WarrantyPeriodMonths\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"WarrantyPeriodMonths\"},\"MountingStructureTypeId\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MountingStructureTypeId\"},\"SolarPanelAirmassUnitsAm\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelAirmassUnitsAm\"},\"PhotovoltaicModuleConstructionTypeId\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"PhotovoltaicModuleConstructionTypeId\"},\"ManufacturedByPartyId\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"ManufacturedByPartyId\"},\"SolarArrayId\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarArrayId\"},\"SolarPanelWeightKg\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelWeightKg\"},\"AverageAnnualEnergyProductionKwh\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"AverageAnnualEnergyProductionKwh\"},\"MaximumSeriesFuseRatingA\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MaximumSeriesFuseRatingA\"},\"NumberOfSolarCells\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"NumberOfSolarCells\"},\"CutoffVoltage\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"CutoffVoltage\"},\"RatedPowerW\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"RatedPowerW\"},\"SolarCellTypeId\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarCellTypeId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarPanel\",\"path\":\"SolarPanel.cdm.json/SolarPanel\"},\"description\":\"A grouping of photovoltaic cells into the building block for solar panels.\\n\\nAssemblies of photovoltaic cells are used to make solar modules which generate electrical power from sunlight.  Multiple cells in an integrated group, all oriented in one plane, constitute a solar photovoltaic panel or solar photovoltaic module.\\n\\nThe electrical energy generated from solar modules, referred to as solar power, is an example of solar energy. A group of connected solar modules (such as prior to installation on a pole-mounted tracker system) is called an \\\"PV array.\\\"\",\"primaryKey\":[\"SolarPanelId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarPanelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"FixedTiltAngleDegrees\"},\"dataType\":\"integer\",\"description\":\"The fixed tilt degree angle of the solar panel.\",\"isNullable\":true,\"name\":\"FixedTiltAngleDegrees\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelWidthMm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The width of the solar panel.\",\"isNullable\":true,\"scale\":8,\"name\":\"SolarPanelWidthMm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelLengthMm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The length of the solar panel.\",\"isNullable\":true,\"scale\":8,\"name\":\"SolarPanelLengthMm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"ModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The model of the solar panel.\",\"isNullable\":true,\"name\":\"ModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"PeakPowerW\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The peak power of the solar panel in W.\",\"isNullable\":true,\"scale\":8,\"name\":\"PeakPowerW\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"OptimalOperatingVoltage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The optimal operating voltage of the solar panel.\",\"isNullable\":true,\"scale\":8,\"name\":\"OptimalOperatingVoltage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"OptimalOperatingCurrentAmps\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The optimal operating current of the solar panel in A.\",\"isNullable\":true,\"scale\":8,\"name\":\"OptimalOperatingCurrentAmps\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"ShortCircuitCurrentAmps\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The solar panel short-circuit current in A.\",\"isNullable\":true,\"scale\":8,\"name\":\"ShortCircuitCurrentAmps\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"OpenCircuitVoltageV\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The solar panel open-circuit voltage.\",\"isNullable\":true,\"scale\":8,\"name\":\"OpenCircuitVoltageV\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MaximumSystemVoltageV\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The solar panel maximum system voltage.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumSystemVoltageV\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MinimumOperatingTemperatureC\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The solar panel minimum operating temperature  in C.\",\"isNullable\":true,\"scale\":8,\"name\":\"MinimumOperatingTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MaximumOperatingTemperatureC\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The solar panel maximum operating temperature  in C.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumOperatingTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"WarrantyPeriodMonths\"},\"dataType\":\"integer\",\"description\":\"The warranty period in months.\",\"isNullable\":true,\"name\":\"WarrantyPeriodMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MountingStructureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a mounting structure type.\",\"isNullable\":true,\"name\":\"MountingStructureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelAirmassUnitsAm\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"A unit of atmospheric mass measurement commonly used in discussion of rating solar photovoltaic panels. The AM measurement for photovoltaic solar panels at standard test conditions (STC) is 1.5AM.\",\"isNullable\":true,\"scale\":8,\"name\":\"SolarPanelAirmassUnitsAm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"PhotovoltaicModuleConstructionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Photovoltaic Module Construction Type.\",\"isNullable\":true,\"name\":\"PhotovoltaicModuleConstructionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"ManufacturedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ManufacturedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":true,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarPanelWeightKg\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The solar panel weight in kg.\",\"isNullable\":true,\"scale\":8,\"name\":\"SolarPanelWeightKg\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"AverageAnnualEnergyProductionKwh\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total energy generated annually by a power station, on average over a period of time of full operation or since the start of full operation, measured in kilowatt-hours.\",\"isNullable\":true,\"scale\":8,\"name\":\"AverageAnnualEnergyProductionKwh\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"MaximumSeriesFuseRatingA\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum fuse rating in amps.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumSeriesFuseRatingA\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"NumberOfSolarCells\"},\"dataType\":\"integer\",\"description\":\"The number of solar cells in the solar panel.\",\"isNullable\":true,\"name\":\"NumberOfSolarCells\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"CutoffVoltage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The voltage levels (activation) at which the charge controller disconnects the photovoltaic array from the battery or the load from the battery.\",\"isNullable\":true,\"scale\":8,\"name\":\"CutoffVoltage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"RatedPowerW\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The solar panels rated power expressed in watts.\",\"isNullable\":true,\"scale\":8,\"name\":\"RatedPowerW\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPanel.cdm.json/SolarPanel\",\"name\":\"SolarCellTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a solar cell type.\",\"isNullable\":true,\"name\":\"SolarCellTypeId\"}]}}}",
+			"Description": "A grouping of photovoltaic cells into the building block for solar panels.\n\nAssemblies of photovoltaic cells are used to make solar modules which generate electrical power from sunlight.  Multiple cells in an integrated group, all oriented in one plane, constitute a solar photovoltaic panel or solar photovoltaic module.\n\nThe electrical energy generated from solar modules, referred to as solar power, is an example of solar energy. A group of connected solar modules (such as prior to installation on a pole-mounted tracker system) is called an \"PV array.\"",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "SolarPanelId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarPanelId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"FixedTiltAngleDegrees\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarPanelWidthMm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarPanelLengthMm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ModelNumber\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"PeakPowerW\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"OptimalOperatingVoltage\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"OptimalOperatingCurrentAmps\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ShortCircuitCurrentAmps\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"OpenCircuitVoltageV\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumSystemVoltageV\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MinimumOperatingTemperatureC\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumOperatingTemperatureC\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"WarrantyPeriodMonths\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MountingStructureTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarPanelAirmassUnitsAm\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"PhotovoltaicModuleConstructionTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ManufacturedByPartyId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarPanelWeightKg\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AverageAnnualEnergyProductionKwh\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MaximumSeriesFuseRatingA\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NumberOfSolarCells\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"CutoffVoltage\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"RatedPowerW\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarCellTypeId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "d1c3594c-9425-4f8b-8f79-9e4e1cd74c82",
+		"Description": "A grouping of photovoltaic cells into the building block for solar panels.\n\nAssemblies of photovoltaic cells are used to make solar modules which generate electrical power from sunlight.  Multiple cells in an integrated group, all oriented in one plane, constitute a solar photovoltaic panel or solar photovoltaic module.\n\nThe electrical energy generated from solar modules, referred to as solar power, is an example of solar energy. A group of connected solar modules (such as prior to installation on a pole-mounted tracker system) is called an \"PV array.\""
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,20 @@
+{
+	"name": "Load Taxi",
+	"properties": {
+		"folder": {
+			"name": "Taxi"
+		},
+		"content": {
+			"query": "COPY INTO [dbo].[Trip]\nFROM 'https://nytaxiblob.blob.core.windows.net/2013/Trip2013'\nWITH\n(\n    FILE_TYPE = 'CSV',\n\tFIELDTERMINATOR = '|',\n\tFIELDQUOTE = '',\n\tROWTERMINATOR='0X0A',\n\tCOMPRESSION = 'GZIP'\n)\nOPTION (LABEL = 'COPY : Load [dbo].[Trip] - Taxi dataset');",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "AdventureWorksDWH",
+				"poolName": "AdventureWorksDWH"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,157 @@
+{
+	"name": "SolarArrayOperatingVoltage",
+	"properties": {
+		"Name": "SolarArrayOperatingVoltage",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "OperatingVoltage",
+					"Description": "The voltage produced by a photovoltaic array when exposed to sunlight and connected to a load.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage",
+						"Name": "OperatingVoltage"
+					}
+				}
+			],
+			"ColumnSetEntityName": "00c9f95f-4a38-47f1-a8dc-a105692398be",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayOperatingVoltage",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayOperatingVoltage",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PeriodStartTimestamp\":{\"entity\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\",\"name\":\"PeriodStartTimestamp\"},\"SolarArrayId\":{\"entity\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\",\"name\":\"SolarArrayId\"},\"PeriodEndTimestamp\":{\"entity\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\",\"name\":\"PeriodEndTimestamp\"},\"OperatingVoltage\":{\"entity\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\",\"name\":\"OperatingVoltage\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArrayOperatingVoltage\",\"path\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\"},\"description\":\"The voltage produced by a photovoltaic array when exposed to sunlight and connected to a load during the period.\",\"primaryKey\":[\"PeriodStartTimestamp\",\"SolarArrayId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayOperatingVoltage.cdm.json/SolarArrayOperatingVoltage\",\"name\":\"OperatingVoltage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The voltage produced by a photovoltaic array when exposed to sunlight and connected to a load.\",\"isNullable\":true,\"scale\":8,\"name\":\"OperatingVoltage\"}]}}}",
+			"Description": "The voltage produced by a photovoltaic array when exposed to sunlight and connected to a load during the period.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "PeriodStartTimestamp,SolarArrayId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"OperatingVoltage\",\"type\":\"decimal(18,8)\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "47e465ac-b04c-4b44-9547-4782b9eb08f6",
+		"Description": "The voltage produced by a photovoltaic array when exposed to sunlight and connected to a load during the period."
+	},
+	"type": "TABLE"
+}

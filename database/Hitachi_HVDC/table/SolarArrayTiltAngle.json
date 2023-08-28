@@ -1,0 +1,157 @@
+{
+	"name": "SolarArrayTiltAngle",
+	"properties": {
+		"Name": "SolarArrayTiltAngle",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "TiltAngleDegrees",
+					"Description": "The angle at which a photovoltaic array is set to face the sun relative to a horizontal position. The tilt angle can be set or adjusted to maximize seasonal or annual energy collection.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle",
+						"Name": "TiltAngleDegrees"
+					}
+				}
+			],
+			"ColumnSetEntityName": "a053bdb8-c5b0-4dcc-ab75-a330f37957aa",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayTiltAngle",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayTiltAngle",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PeriodStartTimestamp\":{\"entity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"name\":\"PeriodStartTimestamp\"},\"SolarArrayId\":{\"entity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"name\":\"SolarArrayId\"},\"PeriodEndTimestamp\":{\"entity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"name\":\"PeriodEndTimestamp\"},\"TiltAngleDegrees\":{\"entity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"name\":\"TiltAngleDegrees\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArrayTiltAngle\",\"path\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\"},\"description\":\"The angle at which a photovoltaic array is set to face the sun relative to a horizontal position. The tilt angle can be set or adjusted to maximize seasonal or annual energy collection.\",\"primaryKey\":[\"PeriodStartTimestamp\",\"SolarArrayId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayTiltAngle.cdm.json/SolarArrayTiltAngle\",\"name\":\"TiltAngleDegrees\"},\"dataType\":\"integer\",\"description\":\"The angle at which a photovoltaic array is set to face the sun relative to a horizontal position. The tilt angle can be set or adjusted to maximize seasonal or annual energy collection.\",\"isNullable\":true,\"name\":\"TiltAngleDegrees\"}]}}}",
+			"Description": "The angle at which a photovoltaic array is set to face the sun relative to a horizontal position. The tilt angle can be set or adjusted to maximize seasonal or annual energy collection.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "PeriodStartTimestamp,SolarArrayId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"TiltAngleDegrees\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "597a9174-755b-405a-8026-f9c511438d92",
+		"Description": "The angle at which a photovoltaic array is set to face the sun relative to a horizontal position. The tilt angle can be set or adjusted to maximize seasonal or annual energy collection."
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,195 @@
+{
+	"name": "SolarArrayEnvironmentalMeasurement",
+	"properties": {
+		"Name": "SolarArrayEnvironmentalMeasurement",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "EnvironmentalMeasurementTypeId",
+					"Description": "The unique identifier of an environmental measurement type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement",
+						"Name": "EnvironmentalMeasurementTypeId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "MeasurementUnits",
+					"Description": "The number of measurement units recorded.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement",
+						"Name": "MeasurementUnits"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement",
+						"Name": "UnitOfMeasureId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "fb9d5f44-9e87-4994-aa1a-4e86d58e1782",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayEnvironmentalMeasurement",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayEnvironmentalMeasurement",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarArrayId\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"SolarArrayId\"},\"EnvironmentalMeasurementTypeId\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"EnvironmentalMeasurementTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"MeasurementUnits\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"UnitOfMeasureId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArrayEnvironmentalMeasurement\",\"path\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\"},\"description\":\"The environmental measurement(s) recorded for the period associated with the solar array.\",\"primaryKey\":[\"SolarArrayId\",\"EnvironmentalMeasurementTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"EnvironmentalMeasurementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an environmental measurement type.\",\"isNullable\":false,\"name\":\"EnvironmentalMeasurementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"MeasurementUnits\"},\"dataType\":\"integer\",\"description\":\"The number of measurement units recorded.\",\"isNullable\":true,\"name\":\"MeasurementUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayEnvironmentalMeasurement.cdm.json/SolarArrayEnvironmentalMeasurement\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"}]}}}",
+			"Description": "The environmental measurement(s) recorded for the period associated with the solar array.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "SolarArrayId,EnvironmentalMeasurementTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"EnvironmentalMeasurementTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"MeasurementUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "80171f47-0966-4eac-bb99-cf9a5f305450",
+		"Description": "The environmental measurement(s) recorded for the period associated with the solar array."
+	},
+	"type": "TABLE"
+}

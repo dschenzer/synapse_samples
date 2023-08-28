@@ -1,0 +1,29 @@
+{
+	"name": "relationship-goroxqiwuo",
+	"properties": {
+		"Name": "relationship-goroxqiwuo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ElectricalNetworkComponent",
+		"ToTableName": "Inverter",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "InverterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"toEntity\":\"Inverter.cdm.json/Inverter\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"InverterId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "ebfcd450-c501-4409-a92e-1f28bb7b0b16"
+	},
+	"type": "RELATIONSHIP"
+}

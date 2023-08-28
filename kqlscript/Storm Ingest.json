@@ -1,0 +1,16 @@
+{
+	"name": "Storm Ingest",
+	"properties": {
+		"content": {
+			"query": "\n//Create a new StormEvents table\n.create table StormEvents (StartTime: datetime, EndTime: datetime, EpisodeId: int, EventId: int, State: string, EventType: string, InjuriesDirect: int, InjuriesIndirect: int, DeathsDirect: int, DeathsIndirect: int, DamageProperty: int, DamageCrops: int, Source: string, BeginLocation: string, EndLocation: string, BeginLat: real, BeginLon: real, EndLat: real, EndLon: real, EpisodeNarrative: string, EventNarrative: string, StormSummary: dynamic)\n\n//Run the followinf statement to ingest sample data to the new table\n.ingest into table StormEvents 'https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv' with (ignoreFirstRecord=true)\n\n//Run the following query to view 100 records of the ingested sample data\nStormEvents \n| sort by StartTime desc \n| take 100 \n\nStormEvents\n| count \n\n// Visualize the data by rendering charts\nStormEvents\n| where EventType ==\"Flood\"\n| summarize EventCount = count() by State \n| where EventCount > 100\n| render piechart",
+			"metadata": {
+				"language": "kql"
+			},
+			"currentConnection": {
+				"poolName": "taxi",
+				"databaseName": "taxi"
+			}
+		},
+		"type": "KqlQuery"
+	}
+}

@@ -1,0 +1,136 @@
+{
+	"name": "SolarArrayType",
+	"properties": {
+		"Name": "SolarArrayType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarArrayTypeId",
+					"Description": "The unique identifier of a Solar Array Type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayType.cdm.json/SolarArrayType",
+						"Name": "SolarArrayTypeId"
+					}
+				},
+				{
+					"Name": "SolarArrayTypeName",
+					"Description": "The name of a Solar Array Type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayType.cdm.json/SolarArrayType",
+						"Name": "SolarArrayTypeName"
+					}
+				},
+				{
+					"Name": "SolarArrayTypeDescription",
+					"Description": "The description of a Solar Array Type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayType.cdm.json/SolarArrayType",
+						"Name": "SolarArrayTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "e61ad9cc-5c57-4a5a-a9f7-9a81ba69088d",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayType",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarArrayTypeId\":{\"entity\":\"SolarArrayType.cdm.json/SolarArrayType\",\"name\":\"SolarArrayTypeId\"},\"SolarArrayTypeName\":{\"entity\":\"SolarArrayType.cdm.json/SolarArrayType\",\"name\":\"SolarArrayTypeName\"},\"SolarArrayTypeDescription\":{\"entity\":\"SolarArrayType.cdm.json/SolarArrayType\",\"name\":\"SolarArrayTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArrayType\",\"path\":\"SolarArrayType.cdm.json/SolarArrayType\"},\"description\":\"The type of solar array type.\\n\\nEx:\\n- flat-plate array\\n- fixed tilt array\\n\\nwhere:\\n\\nflat-plate array - A photovoltaic (PV) array that consists of non-concentrating PV modules.\\n\\nfixed tilt array - A photovoltaic array set in at a fixed angle with respect to horizontal.\",\"primaryKey\":[\"SolarArrayTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayType.cdm.json/SolarArrayType\",\"name\":\"SolarArrayTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Solar Array Type.\",\"isNullable\":false,\"name\":\"SolarArrayTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayType.cdm.json/SolarArrayType\",\"name\":\"SolarArrayTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Solar Array Type.\",\"isNullable\":true,\"name\":\"SolarArrayTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayType.cdm.json/SolarArrayType\",\"name\":\"SolarArrayTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Solar Array Type.\",\"isNullable\":true,\"name\":\"SolarArrayTypeDescription\"}]}}}",
+			"Description": "The type of solar array type.\n\nEx:\n- flat-plate array\n- fixed tilt array\n\nwhere:\n\nflat-plate array - A photovoltaic (PV) array that consists of non-concentrating PV modules.\n\nfixed tilt array - A photovoltaic array set in at a fixed angle with respect to horizontal.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "SolarArrayTypeId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarArrayTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarArrayTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarArrayTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "31a37e1f-0e72-4e4b-b950-6fecc166d824",
+		"Description": "The type of solar array type.\n\nEx:\n- flat-plate array\n- fixed tilt array\n\nwhere:\n\nflat-plate array - A photovoltaic (PV) array that consists of non-concentrating PV modules.\n\nfixed tilt array - A photovoltaic array set in at a fixed angle with respect to horizontal."
+	},
+	"type": "TABLE"
+}

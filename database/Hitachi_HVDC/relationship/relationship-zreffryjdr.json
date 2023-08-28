@@ -1,0 +1,29 @@
+{
+	"name": "relationship-zreffryjdr",
+	"properties": {
+		"Name": "relationship-zreffryjdr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Battery",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ManufacturedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Battery.cdm.json/Battery\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ManufacturedByPartyId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "18de57f4-bc32-4884-8366-b9dde88e2148"
+	},
+	"type": "RELATIONSHIP"
+}

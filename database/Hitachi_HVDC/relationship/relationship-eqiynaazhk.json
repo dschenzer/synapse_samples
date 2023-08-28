@@ -1,0 +1,29 @@
+{
+	"name": "relationship-eqiynaazhk",
+	"properties": {
+		"Name": "relationship-eqiynaazhk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ElectricalNetworkComponent",
+		"ToTableName": "SolarPanel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "SolarPanelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"toEntity\":\"SolarPanel.cdm.json/SolarPanel\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"SolarPanelId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "59d01207-2dfa-4860-aaee-657073701b0c"
+	},
+	"type": "RELATIONSHIP"
+}

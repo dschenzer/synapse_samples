@@ -1,0 +1,29 @@
+{
+	"name": "relationship-jgdsvhlhmc",
+	"properties": {
+		"Name": "relationship-jgdsvhlhmc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "SolarPowerOutputForecast",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ForecastSourcePartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ForecastSourcePartyId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "ee173600-313b-4cb1-a9f8-b4fea4721715"
+	},
+	"type": "RELATIONSHIP"
+}

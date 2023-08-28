@@ -1,0 +1,176 @@
+{
+	"name": "DiffuseHorizontalIrradiance",
+	"properties": {
+		"Name": "DiffuseHorizontalIrradiance",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "DhiMeasurementUnits",
+					"Description": "The number of measurement units recorded.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance",
+						"Name": "DhiMeasurementUnits"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance",
+						"Name": "UnitOfMeasureId"
+					}
+				}
+			],
+			"ColumnSetEntityName": "9cc325fe-1d0f-4f83-af6c-9e1b1b787d12",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/DiffuseHorizontalIrradiance",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/DiffuseHorizontalIrradiance",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarArrayId\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"SolarArrayId\"},\"PeriodStartTimestamp\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"PeriodEndTimestamp\"},\"DhiMeasurementUnits\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"DhiMeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"UnitOfMeasureId\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DiffuseHorizontalIrradiance\",\"path\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\"},\"description\":\"DHI is the energy received on a unit area of horizontal surface from all directions when radiation is scattered off the atmosphere or surrounding area.\",\"primaryKey\":[\"SolarArrayId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"DhiMeasurementUnits\"},\"dataType\":\"integer\",\"description\":\"The number of measurement units recorded.\",\"isNullable\":true,\"name\":\"DhiMeasurementUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DiffuseHorizontalIrradiance.cdm.json/DiffuseHorizontalIrradiance\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"}]}}}",
+			"Description": "DHI is the energy received on a unit area of horizontal surface from all directions when radiation is scattered off the atmosphere or surrounding area.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "SolarArrayId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"DhiMeasurementUnits\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "647be770-9fce-4b94-9a16-4c2fe882404d",
+		"Description": "DHI is the energy received on a unit area of horizontal surface from all directions when radiation is scattered off the atmosphere or surrounding area."
+	},
+	"type": "TABLE"
+}

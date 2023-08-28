@@ -1,0 +1,234 @@
+{
+	"name": "SolarPowerOutputForecast",
+	"properties": {
+		"Name": "SolarPowerOutputForecast",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "ForecastSourcePartyId",
+					"Description": "The unique identifier of a Party.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast",
+						"Name": "ForecastSourcePartyId"
+					}
+				},
+				{
+					"Name": "SolarPowerOutputForecastTimestamp",
+					"Description": "The timestamp that the generator solar output forecast was made.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast",
+						"Name": "SolarPowerOutputForecastTimestamp"
+					}
+				},
+				{
+					"Name": "SolarPowerOutputForecastPeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the solar power output forecast.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast",
+						"Name": "SolarPowerOutputForecastPeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "SolarPowerOutputForecastPeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the solar power output forecast.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast",
+						"Name": "SolarPowerOutputForecastPeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "SolarPowerOutputForecast",
+					"Description": "The forecast power output of the generator during the associated period.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast",
+						"Name": "SolarPowerOutputForecast"
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast",
+						"Name": "UnitOfMeasureId"
+					}
+				},
+				{
+					"Name": "SolarPowerOutputForecastNote",
+					"Description": "A note, comment or additional information regarding the Solar Power Output Forecast.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast",
+						"Name": "SolarPowerOutputForecastNote"
+					}
+				}
+			],
+			"ColumnSetEntityName": "2a3d5701-4c41-453f-997b-bcc6f35005f3",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarPowerOutputForecast",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarPowerOutputForecast",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SolarArrayId\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarArrayId\"},\"ForecastSourcePartyId\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"ForecastSourcePartyId\"},\"SolarPowerOutputForecastTimestamp\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecastTimestamp\"},\"SolarPowerOutputForecastPeriodStartTimestamp\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecastPeriodStartTimestamp\"},\"SolarPowerOutputForecastPeriodEndTimestamp\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecastPeriodEndTimestamp\"},\"SolarPowerOutputForecast\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecast\"},\"UnitOfMeasureId\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"UnitOfMeasureId\"},\"SolarPowerOutputForecastNote\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecastNote\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarPowerOutputForecast\",\"path\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\"},\"description\":\"The predicted / forecasted power output for a generator for a period of time.\",\"primaryKey\":[\"SolarArrayId\",\"ForecastSourcePartyId\",\"SolarPowerOutputForecastTimestamp\",\"SolarPowerOutputForecastPeriodStartTimestamp\",\"SolarPowerOutputForecastPeriodEndTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"ForecastSourcePartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"ForecastSourcePartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecastTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the generator solar output forecast was made.\",\"isNullable\":false,\"name\":\"SolarPowerOutputForecastTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecastPeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the solar power output forecast.\",\"isNullable\":false,\"name\":\"SolarPowerOutputForecastPeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecastPeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the solar power output forecast.\",\"isNullable\":false,\"name\":\"SolarPowerOutputForecastPeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecast\"},\"dataType\":\"integer\",\"description\":\"The forecast power output of the generator during the associated period.\",\"isNullable\":true,\"name\":\"SolarPowerOutputForecast\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarPowerOutputForecast.cdm.json/SolarPowerOutputForecast\",\"name\":\"SolarPowerOutputForecastNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Solar Power Output Forecast.\",\"isNullable\":true,\"name\":\"SolarPowerOutputForecastNote\"}]}}}",
+			"Description": "The predicted / forecasted power output for a generator for a period of time.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "SolarArrayId,ForecastSourcePartyId,SolarPowerOutputForecastTimestamp,SolarPowerOutputForecastPeriodStartTimestamp,SolarPowerOutputForecastPeriodEndTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"ForecastSourcePartyId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarPowerOutputForecastTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarPowerOutputForecastPeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarPowerOutputForecastPeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarPowerOutputForecast\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"UnitOfMeasureId\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"SolarPowerOutputForecastNote\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "87aa5715-f28d-4ee3-b992-e3f997ea87b6",
+		"Description": "The predicted / forecasted power output for a generator for a period of time."
+	},
+	"type": "TABLE"
+}

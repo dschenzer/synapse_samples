@@ -1,0 +1,29 @@
+{
+	"name": "relationship-ysxbxoxqhi",
+	"properties": {
+		"Name": "relationship-ysxbxoxqhi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Hitachi_HVDC"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ElectricalNetworkComponent",
+		"ToTableName": "Battery",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "BatteryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ElectricalNetworkComponent.cdm.json/ElectricalNetworkComponent\",\"toEntity\":\"Battery.cdm.json/Battery\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"BatteryId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "180a5a75-f613-4bee-bca5-b032c4b01b3b"
+	},
+	"type": "RELATIONSHIP"
+}

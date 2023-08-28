@@ -1,0 +1,157 @@
+{
+	"name": "SolarArrayPeakSunHours",
+	"properties": {
+		"Name": "SolarArrayPeakSunHours",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Hitachi_HVDC",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours",
+						"Name": "PeriodStartTimestamp"
+					}
+				},
+				{
+					"Name": "SolarArrayId",
+					"Description": "The unique identifier of a Component.",
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours",
+						"Name": "SolarArrayId"
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours",
+						"Name": "PeriodEndTimestamp"
+					}
+				},
+				{
+					"Name": "NumberOfPeakSunHours",
+					"Description": "The equivalent number of hours per day when solar irradiance averages 1,000 w/m2. F\n\nor example, six peak sun hours means that the energy received during total daylight hours equals the energy that would have been received had the irradiance for six hours been 1,000 w/m2.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours",
+						"Name": "NumberOfPeakSunHours"
+					}
+				}
+			],
+			"ColumnSetEntityName": "dc8ae9f9-555e-4972-97fe-760308816c37",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayPeakSunHours",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/Hitachi_HVDC/SolarArrayPeakSunHours",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PeriodStartTimestamp\":{\"entity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"name\":\"PeriodStartTimestamp\"},\"SolarArrayId\":{\"entity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"name\":\"SolarArrayId\"},\"PeriodEndTimestamp\":{\"entity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"name\":\"PeriodEndTimestamp\"},\"NumberOfPeakSunHours\":{\"entity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"name\":\"NumberOfPeakSunHours\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolarArrayPeakSunHours\",\"path\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\"},\"description\":\"The equivalent number of hours per day when solar irradiance averages 1,000 w/m2. For example, six peak sun hours means that the energy received during total daylight hours equals the energy that would have been received had the irradiance for six hours been 1,000 w/m2.\",\"primaryKey\":[\"PeriodStartTimestamp\",\"SolarArrayId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"name\":\"SolarArrayId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SolarArrayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolarArrayPeakSunHours.cdm.json/SolarArrayPeakSunHours\",\"name\":\"NumberOfPeakSunHours\"},\"dataType\":\"integer\",\"description\":\"The equivalent number of hours per day when solar irradiance averages 1,000 w/m2. F\\n\\nor example, six peak sun hours means that the energy received during total daylight hours equals the energy that would have been received had the irradiance for six hours been 1,000 w/m2.\",\"isNullable\":true,\"name\":\"NumberOfPeakSunHours\"}]}}}",
+			"Description": "The equivalent number of hours per day when solar irradiance averages 1,000 w/m2. For example, six peak sun hours means that the energy received during total daylight hours equals the energy that would have been received had the irradiance for six hours been 1,000 w/m2.",
+			"DisplayFolderInfo": "{\"name\":\"Solar Power Generation\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "PeriodStartTimestamp,SolarArrayId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"PeriodStartTimestamp\",\"type\":\"timestamp\",\"nullable\":false,\"metadata\":{}},{\"name\":\"SolarArrayId\",\"type\":\"long\",\"nullable\":false,\"metadata\":{}},{\"name\":\"PeriodEndTimestamp\",\"type\":\"timestamp\",\"nullable\":true,\"metadata\":{}},{\"name\":\"NumberOfPeakSunHours\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "2371ba6f-75f2-4bc2-9e15-95658d5cec7a",
+		"Description": "The equivalent number of hours per day when solar irradiance averages 1,000 w/m2. For example, six peak sun hours means that the energy received during total daylight hours equals the energy that would have been received had the irradiance for six hours been 1,000 w/m2."
+	},
+	"type": "TABLE"
+}

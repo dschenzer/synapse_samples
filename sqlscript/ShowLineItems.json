@@ -1,0 +1,17 @@
+{
+	"name": "ShowLineItems",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP 100 * FROM dbo.lineitem\nGo",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tpc",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

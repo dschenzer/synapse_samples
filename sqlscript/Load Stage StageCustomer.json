@@ -1,0 +1,20 @@
+{
+	"name": "Load Stage StageCustomer",
+	"properties": {
+		"folder": {
+			"name": "AdventureWorks"
+		},
+		"content": {
+			"query": "COPY INTO dbo.StageCustomer\n(CustomerKey, GeographyKey, CustomerAlternateKey, Title, FirstName, MiddleName, LastName, NameStyle, BirthDate, \nMaritalStatus, Suffix, Gender, EmailAddress, YearlyIncome, TotalChildren, NumberChildrenAtHome, EnglishEducation, \nSpanishEducation, FrenchEducation, EnglishOccupation, SpanishOccupation, FrenchOccupation, HouseOwnerFlag, \nNumberCarsOwned, AddressLine1, AddressLine2, Phone, DateFirstPurchase, CommuteDistance)\nFROM 'https://schenzersynapse.dfs.core.windows.net/code/synapse/workspaces/SCHENZER-SYNAPSE/StageCustomer.csv'\nWITH\n(\n FILE_TYPE = 'CSV'\n ,MAXERRORS = 0\n ,FIRSTROW = 2 --Defines where the first data row starts\n ,ERRORFILE = 'https://schenzersynapse.dfs.core.windows.net/code/synapse/workspaces/SCHENZER-SYNAPSE/'\n)\n--END\nGO\n\n\nSELECT Top 100 *\nFROM dbo.StageCustomer",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "AdventureWorksDWH",
+				"poolName": "AdventureWorksDWH"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
