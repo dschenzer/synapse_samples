@@ -1,0 +1,39 @@
+{
+	"name": "WordCount",
+	"properties": {
+		"targetBigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"requiredSparkVersion": "3.3",
+		"language": "python",
+		"scanFolder": false,
+		"jobProperties": {
+			"name": "WordCount",
+			"file": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/schenzer-synapse/batchjobs/Spark%20job%20definition%201/wordcount.py",
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "1",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "1b0f0e71-4f76-498e-8c51-44b091bdad7a",
+				"spark.synapse.context.sjdname": "WordCount"
+			},
+			"args": [
+				"abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/schenzer-synapse/batchjobs/Spark",
+				"job",
+				"definition",
+				"1/shakespeare.txt"
+			],
+			"jars": [],
+			"pyFiles": [
+				""
+			],
+			"files": [],
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2
+		}
+	}
+}
