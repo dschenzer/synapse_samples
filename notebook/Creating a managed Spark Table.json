@@ -18,7 +18,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "9298dab7-d3da-4c32-b6c0-1ed306dd4426"
+				"spark.autotune.trackingId": "239281e0-4339-43fd-9906-2fdb07be686e"
 			}
 		},
 		"metadata": {
@@ -38,14 +38,13 @@
 				"endpoint": "https://schenzer-synapse.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
 				"auth": {
 					"type": "AAD",
-					"authResource": "https://dev.azuresynapse.net",
-					"authHeader": null
+					"authResource": "https://dev.azuresynapse.net"
 				},
 				"sparkVersion": "3.3",
 				"nodeCount": 3,
 				"cores": 8,
 				"memory": 56,
-				"extraHeader": null
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
@@ -63,8 +62,9 @@
 				"cell_type": "code",
 				"source": [
 					"spark.sql(\"CREATE TABLE cities  (name STRING, population INT) USING PARQUET\")\n",
-					""
-				]
+					" "
+				],
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -77,7 +77,8 @@
 				"cell_type": "code",
 				"source": [
 					"spark.sql(\"INSERT INTO cities VALUES (\\'Seattle\\', 730400), (\\'San Francisco\\', 881549), (\\'Beijing\\', 21540000), (\\'Bangalore\\', 10540000)\")"
-				]
+				],
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -115,7 +116,8 @@
 				},
 				"source": [
 					"display(spark.sql(\"SELECT * FROM cities ORDER BY name\"))"
-				]
+				],
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -128,7 +130,8 @@
 				"cell_type": "code",
 				"source": [
 					"spark.sql(\"DROP TABLE cities\")"
-				]
+				],
+				"execution_count": null
 			}
 		]
 	}
