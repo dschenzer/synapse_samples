@@ -1,0 +1,168 @@
+{
+	"name": "OrderHold",
+	"properties": {
+		"Name": "OrderHold",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "A Hold placed on the Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderHold.cdm.json/OrderHold",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderHoldPlacedTimestamp",
+					"Description": "The timestamp the order hold was placed.",
+					"BaseAttributeReference": {
+						"Entity": "OrderHold.cdm.json/OrderHold",
+						"Name": "OrderHoldPlacedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderHoldReleaseTimestamp",
+					"Description": "The timestamp that the order hold is released.",
+					"BaseAttributeReference": {
+						"Entity": "OrderHold.cdm.json/OrderHold",
+						"Name": "OrderHoldReleaseTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HoldReasonId",
+					"Description": "The unique identifier of a Hold Reason.",
+					"BaseAttributeReference": {
+						"Entity": "OrderHold.cdm.json/OrderHold",
+						"Name": "HoldReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HoldTypeId",
+					"Description": "The unique identifier of a Hold Type.",
+					"BaseAttributeReference": {
+						"Entity": "OrderHold.cdm.json/OrderHold",
+						"Name": "HoldTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderHoldNote",
+					"Description": "A note, comment or additional information regarding the Order Hold.",
+					"BaseAttributeReference": {
+						"Entity": "OrderHold.cdm.json/OrderHold",
+						"Name": "OrderHoldNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderHold",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderHold",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"OrderId\"},\"OrderHoldPlacedTimestamp\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"OrderHoldPlacedTimestamp\"},\"OrderHoldReleaseTimestamp\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"OrderHoldReleaseTimestamp\"},\"HoldReasonId\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"HoldReasonId\"},\"HoldTypeId\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"HoldTypeId\"},\"OrderHoldNote\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"OrderHoldNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderHold\",\"path\":\"OrderHold.cdm.json/OrderHold\"},\"description\":\"A Hold placed on the Order.\",\"primaryKey\":[\"OrderId\",\"OrderHoldPlacedTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"OrderHoldPlacedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp the order hold was placed.\",\"isNullable\":false,\"name\":\"OrderHoldPlacedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"OrderHoldReleaseTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the order hold is released.\",\"isNullable\":true,\"name\":\"OrderHoldReleaseTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"HoldReasonId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Hold Reason.\",\"isNullable\":true,\"name\":\"HoldReasonId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"HoldTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Hold Type.\",\"isNullable\":true,\"name\":\"HoldTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderHold.cdm.json/OrderHold\",\"name\":\"OrderHoldNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Order Hold.\",\"isNullable\":true,\"name\":\"OrderHoldNote\"}]}}}",
+			"Description": "A Hold placed on the Order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,OrderHoldPlacedTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

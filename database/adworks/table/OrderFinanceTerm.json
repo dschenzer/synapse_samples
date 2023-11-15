@@ -1,0 +1,115 @@
+{
+	"name": "OrderFinanceTerm",
+	"properties": {
+		"Name": "OrderFinanceTerm",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The Finance Term(s) applied to the Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderFinanceTerm.cdm.json/OrderFinanceTerm",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FinanceTermId",
+					"Description": "The unique identifier of a Finance Term.",
+					"BaseAttributeReference": {
+						"Entity": "OrderFinanceTerm.cdm.json/OrderFinanceTerm",
+						"Name": "FinanceTermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderFinanceTermNote",
+					"Description": "A note, comment or additional information regarding the order finance term.",
+					"BaseAttributeReference": {
+						"Entity": "OrderFinanceTerm.cdm.json/OrderFinanceTerm",
+						"Name": "OrderFinanceTermNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderFinanceTerm",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderFinanceTerm",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderFinanceTerm.cdm.json/OrderFinanceTerm\",\"name\":\"OrderId\"},\"FinanceTermId\":{\"entity\":\"OrderFinanceTerm.cdm.json/OrderFinanceTerm\",\"name\":\"FinanceTermId\"},\"OrderFinanceTermNote\":{\"entity\":\"OrderFinanceTerm.cdm.json/OrderFinanceTerm\",\"name\":\"OrderFinanceTermNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderFinanceTerm\",\"path\":\"OrderFinanceTerm.cdm.json/OrderFinanceTerm\"},\"description\":\"The Finance Term(s) applied to the Order.\",\"primaryKey\":[\"OrderId\",\"FinanceTermId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderFinanceTerm.cdm.json/OrderFinanceTerm\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderFinanceTerm.cdm.json/OrderFinanceTerm\",\"name\":\"FinanceTermId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Finance Term.\",\"isNullable\":false,\"name\":\"FinanceTermId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderFinanceTerm.cdm.json/OrderFinanceTerm\",\"name\":\"OrderFinanceTermNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the order finance term.\",\"isNullable\":true,\"name\":\"OrderFinanceTermNote\"}]}}}",
+			"Description": "The Finance Term(s) applied to the Order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,FinanceTermId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

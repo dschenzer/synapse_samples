@@ -1,0 +1,26 @@
+{
+	"name": "relationship-crfopdlvqr",
+	"properties": {
+		"Name": "relationship-crfopdlvqr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Carrier",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CarrierId",
+				"ToColumnName": "RequestedCarrierId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Carrier.cdm.json/Carrier\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"CarrierId\",\"toAttribute\":\"RequestedCarrierId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,150 @@
+{
+	"name": "OrderSatisfactionRating",
+	"properties": {
+		"Name": "OrderSatisfactionRating",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The service satisfaction rating for specific criteria or a specific order as a result of a survey or similar opinion gathering mechanism.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RatingCriteriaId",
+					"Description": "The unique identifier of a Rating Criteria.",
+					"BaseAttributeReference": {
+						"Entity": "OrderSatisfactionRating.cdm.json/OrderSatisfactionRating",
+						"Name": "RatingCriteriaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReportedTimestamp",
+					"Description": "The timestamp that the associated rating was reported.",
+					"BaseAttributeReference": {
+						"Entity": "OrderSatisfactionRating.cdm.json/OrderSatisfactionRating",
+						"Name": "ReportedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderSatisfactionRating.cdm.json/OrderSatisfactionRating",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderSatisfactionRatingNote",
+					"Description": "Comments, notes or additional information regarding the Order Satisfaction Rating.",
+					"BaseAttributeReference": {
+						"Entity": "OrderSatisfactionRating.cdm.json/OrderSatisfactionRating",
+						"Name": "OrderSatisfactionRatingNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SatisfactionRatingId",
+					"Description": "The unique identifier of a Service Satisfaction Rating.",
+					"BaseAttributeReference": {
+						"Entity": "OrderSatisfactionRating.cdm.json/OrderSatisfactionRating",
+						"Name": "SatisfactionRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderSatisfactionRating",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderSatisfactionRating",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RatingCriteriaId\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"RatingCriteriaId\"},\"ReportedTimestamp\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"ReportedTimestamp\"},\"OrderId\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"OrderId\"},\"OrderSatisfactionRatingNote\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"OrderSatisfactionRatingNote\"},\"SatisfactionRatingId\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"SatisfactionRatingId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderSatisfactionRating\",\"path\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\"},\"description\":\"The service satisfaction rating for specific criteria or a specific order as a result of a survey or similar opinion gathering mechanism.\",\"primaryKey\":[\"RatingCriteriaId\",\"ReportedTimestamp\",\"OrderId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"RatingCriteriaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Rating Criteria.\",\"isNullable\":false,\"name\":\"RatingCriteriaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"ReportedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated rating was reported.\",\"isNullable\":false,\"name\":\"ReportedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"OrderSatisfactionRatingNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Comments, notes or additional information regarding the Order Satisfaction Rating.\",\"isNullable\":true,\"name\":\"OrderSatisfactionRatingNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderSatisfactionRating.cdm.json/OrderSatisfactionRating\",\"name\":\"SatisfactionRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Satisfaction Rating.\",\"isNullable\":false,\"name\":\"SatisfactionRatingId\"}]}}}",
+			"Description": "The service satisfaction rating for specific criteria or a specific order as a result of a survey or similar opinion gathering mechanism.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RatingCriteriaId,ReportedTimestamp,OrderId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

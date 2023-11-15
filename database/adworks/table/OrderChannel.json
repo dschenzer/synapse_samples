@@ -1,0 +1,132 @@
+{
+	"name": "OrderChannel",
+	"properties": {
+		"Name": "OrderChannel",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "A channel associated with an order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChannelId",
+					"Description": "The unique identifier of a Channel.",
+					"BaseAttributeReference": {
+						"Entity": "OrderChannel.cdm.json/OrderChannel",
+						"Name": "ChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderChannelRelationshipTypeId",
+					"Description": "The unique identifier of a Order Channel Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "OrderChannel.cdm.json/OrderChannel",
+						"Name": "OrderChannelRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderChannel.cdm.json/OrderChannel",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderChannelNote",
+					"Description": "A note, comment or additional information regarding the order channel.",
+					"BaseAttributeReference": {
+						"Entity": "OrderChannel.cdm.json/OrderChannel",
+						"Name": "OrderChannelNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderChannel",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderChannel",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChannelId\":{\"entity\":\"OrderChannel.cdm.json/OrderChannel\",\"name\":\"ChannelId\"},\"OrderChannelRelationshipTypeId\":{\"entity\":\"OrderChannel.cdm.json/OrderChannel\",\"name\":\"OrderChannelRelationshipTypeId\"},\"OrderId\":{\"entity\":\"OrderChannel.cdm.json/OrderChannel\",\"name\":\"OrderId\"},\"OrderChannelNote\":{\"entity\":\"OrderChannel.cdm.json/OrderChannel\",\"name\":\"OrderChannelNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderChannel\",\"path\":\"OrderChannel.cdm.json/OrderChannel\"},\"description\":\"A channel associated with an order.\",\"primaryKey\":[\"ChannelId\",\"OrderChannelRelationshipTypeId\",\"OrderId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderChannel.cdm.json/OrderChannel\",\"name\":\"ChannelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Channel.\",\"isNullable\":false,\"name\":\"ChannelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderChannel.cdm.json/OrderChannel\",\"name\":\"OrderChannelRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Order Channel Relationship Type.\",\"isNullable\":false,\"name\":\"OrderChannelRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderChannel.cdm.json/OrderChannel\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderChannel.cdm.json/OrderChannel\",\"name\":\"OrderChannelNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the order channel.\",\"isNullable\":true,\"name\":\"OrderChannelNote\"}]}}}",
+			"Description": "A channel associated with an order.",
+			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ChannelId,OrderChannelRelationshipTypeId,OrderId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

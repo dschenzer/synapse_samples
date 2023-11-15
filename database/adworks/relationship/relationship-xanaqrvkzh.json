@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xanaqrvkzh",
+	"properties": {
+		"Name": "relationship-xanaqrvkzh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PaymentMethod",
+		"ToTableName": "Order",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PaymentMethodId",
+				"ToColumnName": "PaymentMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PaymentMethod.cdm.json/PaymentMethod\",\"toEntity\":\"Order.cdm.json/Order\",\"joinPairs\":[{\"fromAttribute\":\"PaymentMethodId\",\"toAttribute\":\"PaymentMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

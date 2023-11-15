@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cskojvsbiv",
+	"properties": {
+		"Name": "relationship-cskojvsbiv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerIdentificationMethod",
+		"ToTableName": "Order",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerIdentificationMethodId",
+				"ToColumnName": "CustomerIdentificationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerIdentificationMethod.cdm.json/CustomerIdentificationMethod\",\"toEntity\":\"Order.cdm.json/Order\",\"joinPairs\":[{\"fromAttribute\":\"CustomerIdentificationMethodId\",\"toAttribute\":\"CustomerIdentificationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

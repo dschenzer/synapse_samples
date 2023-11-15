@@ -1,0 +1,116 @@
+{
+	"name": "RejectionReason",
+	"properties": {
+		"Name": "RejectionReason",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The reason why an Order or Order Line Item is rejected.\n\nEx:\n- Customer has poor credit\n- Insufficient inventory\n- Item quality problem",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RejectionReasonId",
+					"Description": "The unique identifier of a Rejection Reason.",
+					"BaseAttributeReference": {
+						"Entity": "RejectionReason.cdm.json/RejectionReason",
+						"Name": "RejectionReasonId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RejectionReasonName",
+					"Description": "The name of a Rejection Reason.",
+					"BaseAttributeReference": {
+						"Entity": "RejectionReason.cdm.json/RejectionReason",
+						"Name": "RejectionReasonName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RejectionReasonDescription",
+					"Description": "The description of a Rejection Reason.",
+					"BaseAttributeReference": {
+						"Entity": "RejectionReason.cdm.json/RejectionReason",
+						"Name": "RejectionReasonDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/RejectionReason",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/RejectionReason",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RejectionReasonId\":{\"entity\":\"RejectionReason.cdm.json/RejectionReason\",\"name\":\"RejectionReasonId\"},\"RejectionReasonName\":{\"entity\":\"RejectionReason.cdm.json/RejectionReason\",\"name\":\"RejectionReasonName\"},\"RejectionReasonDescription\":{\"entity\":\"RejectionReason.cdm.json/RejectionReason\",\"name\":\"RejectionReasonDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RejectionReason\",\"path\":\"RejectionReason.cdm.json/RejectionReason\"},\"description\":\"The reason why an Order or Order Line Item is rejected.\\n\\nEx:\\n- Customer has poor credit\\n- Insufficient inventory\\n- Item quality problem\",\"primaryKey\":[\"RejectionReasonId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RejectionReason.cdm.json/RejectionReason\",\"name\":\"RejectionReasonId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Rejection Reason.\",\"isNullable\":false,\"name\":\"RejectionReasonId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RejectionReason.cdm.json/RejectionReason\",\"name\":\"RejectionReasonName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of a Rejection Reason.\",\"isNullable\":true,\"name\":\"RejectionReasonName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RejectionReason.cdm.json/RejectionReason\",\"name\":\"RejectionReasonDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of a Rejection Reason.\",\"isNullable\":true,\"name\":\"RejectionReasonDescription\"}]}}}",
+			"Description": "The reason why an Order or Order Line Item is rejected.\n\nEx:\n- Customer has poor credit\n- Insufficient inventory\n- Item quality problem",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RejectionReasonId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

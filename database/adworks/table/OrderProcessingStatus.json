@@ -1,0 +1,116 @@
+{
+	"name": "OrderProcessingStatus",
+	"properties": {
+		"Name": "OrderProcessingStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The status of the associated Order.\n\nEx:\n-  Received\n-  On Backlog\n-  Cancelled\n-  Returned\n-  Shipped\n-  Pending consolidation with other orders\n-  Rush\n-  Emergency\n-  Normal",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderProcessingStatusId",
+					"Description": "The unique identifier of an Order Processing Status.",
+					"BaseAttributeReference": {
+						"Entity": "OrderProcessingStatus.cdm.json/OrderProcessingStatus",
+						"Name": "OrderProcessingStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderProcessingStatusName",
+					"Description": "The name of the Order Processing Status.",
+					"BaseAttributeReference": {
+						"Entity": "OrderProcessingStatus.cdm.json/OrderProcessingStatus",
+						"Name": "OrderProcessingStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderProcessingStatusDescription",
+					"Description": "The description of the Order Processing Status.",
+					"BaseAttributeReference": {
+						"Entity": "OrderProcessingStatus.cdm.json/OrderProcessingStatus",
+						"Name": "OrderProcessingStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderProcessingStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderProcessingStatus",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderProcessingStatusId\":{\"entity\":\"OrderProcessingStatus.cdm.json/OrderProcessingStatus\",\"name\":\"OrderProcessingStatusId\"},\"OrderProcessingStatusName\":{\"entity\":\"OrderProcessingStatus.cdm.json/OrderProcessingStatus\",\"name\":\"OrderProcessingStatusName\"},\"OrderProcessingStatusDescription\":{\"entity\":\"OrderProcessingStatus.cdm.json/OrderProcessingStatus\",\"name\":\"OrderProcessingStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderProcessingStatus\",\"path\":\"OrderProcessingStatus.cdm.json/OrderProcessingStatus\"},\"description\":\"The status of the associated Order.\\n\\nEx:\\n-  Received\\n-  On Backlog\\n-  Cancelled\\n-  Returned\\n-  Shipped\\n-  Pending consolidation with other orders\\n-  Rush\\n-  Emergency\\n-  Normal\",\"primaryKey\":[\"OrderProcessingStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderProcessingStatus.cdm.json/OrderProcessingStatus\",\"name\":\"OrderProcessingStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Order Processing Status.\",\"isNullable\":false,\"name\":\"OrderProcessingStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderProcessingStatus.cdm.json/OrderProcessingStatus\",\"name\":\"OrderProcessingStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the Order Processing Status.\",\"isNullable\":true,\"name\":\"OrderProcessingStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderProcessingStatus.cdm.json/OrderProcessingStatus\",\"name\":\"OrderProcessingStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of the Order Processing Status.\",\"isNullable\":true,\"name\":\"OrderProcessingStatusDescription\"}]}}}",
+			"Description": "The status of the associated Order.\n\nEx:\n-  Received\n-  On Backlog\n-  Cancelled\n-  Returned\n-  Shipped\n-  Pending consolidation with other orders\n-  Rush\n-  Emergency\n-  Normal",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderProcessingStatusId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

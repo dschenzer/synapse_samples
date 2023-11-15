@@ -1,0 +1,115 @@
+{
+	"name": "OrderFulfillmentPlan",
+	"properties": {
+		"Name": "OrderFulfillmentPlan",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The fulfillment plan related to an order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FulfillmentPlanId",
+					"Description": "The unique identifier of a fulfillment.",
+					"BaseAttributeReference": {
+						"Entity": "OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan",
+						"Name": "FulfillmentPlanId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderFulfillmentPlanNote",
+					"Description": "A note, comment or additional information regarding the Order Fulfillment Plan.",
+					"BaseAttributeReference": {
+						"Entity": "OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan",
+						"Name": "OrderFulfillmentPlanNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderFulfillmentPlan",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderFulfillmentPlan",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan\",\"name\":\"OrderId\"},\"FulfillmentPlanId\":{\"entity\":\"OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan\",\"name\":\"FulfillmentPlanId\"},\"OrderFulfillmentPlanNote\":{\"entity\":\"OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan\",\"name\":\"OrderFulfillmentPlanNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderFulfillmentPlan\",\"path\":\"OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan\"},\"description\":\"The fulfillment plan related to an order.\",\"primaryKey\":[\"OrderId\",\"FulfillmentPlanId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan\",\"name\":\"FulfillmentPlanId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fulfillment.\",\"isNullable\":false,\"name\":\"FulfillmentPlanId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderFulfillmentPlan.cdm.json/OrderFulfillmentPlan\",\"name\":\"OrderFulfillmentPlanNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Order Fulfillment Plan.\",\"isNullable\":true,\"name\":\"OrderFulfillmentPlanNote\"}]}}}",
+			"Description": "The fulfillment plan related to an order.",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "OrderId,FulfillmentPlanId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

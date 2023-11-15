@@ -1,0 +1,115 @@
+{
+	"name": "OrderSalesTerm",
+	"properties": {
+		"Name": "OrderSalesTerm",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The one or more Sales Term(s) associated with the Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderSalesTerm.cdm.json/OrderSalesTerm",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SalesTermId",
+					"Description": "The unique identifier of a Sales Term.",
+					"BaseAttributeReference": {
+						"Entity": "OrderSalesTerm.cdm.json/OrderSalesTerm",
+						"Name": "SalesTermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderSalesTermNote",
+					"Description": "A note, comment or additional information regarding the Order Sales Term.",
+					"BaseAttributeReference": {
+						"Entity": "OrderSalesTerm.cdm.json/OrderSalesTerm",
+						"Name": "OrderSalesTermNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderSalesTerm",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderSalesTerm",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderSalesTerm.cdm.json/OrderSalesTerm\",\"name\":\"OrderId\"},\"SalesTermId\":{\"entity\":\"OrderSalesTerm.cdm.json/OrderSalesTerm\",\"name\":\"SalesTermId\"},\"OrderSalesTermNote\":{\"entity\":\"OrderSalesTerm.cdm.json/OrderSalesTerm\",\"name\":\"OrderSalesTermNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderSalesTerm\",\"path\":\"OrderSalesTerm.cdm.json/OrderSalesTerm\"},\"description\":\"The one or more Sales Term(s) associated with the Order.\",\"primaryKey\":[\"OrderId\",\"SalesTermId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderSalesTerm.cdm.json/OrderSalesTerm\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderSalesTerm.cdm.json/OrderSalesTerm\",\"name\":\"SalesTermId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Sales Term.\",\"isNullable\":false,\"name\":\"SalesTermId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderSalesTerm.cdm.json/OrderSalesTerm\",\"name\":\"OrderSalesTermNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Order Sales Term.\",\"isNullable\":true,\"name\":\"OrderSalesTermNote\"}]}}}",
+			"Description": "The one or more Sales Term(s) associated with the Order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,SalesTermId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

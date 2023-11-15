@@ -1,0 +1,116 @@
+{
+	"name": "SalesMethod",
+	"properties": {
+		"Name": "SalesMethod",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The means by which the associated Order line items were sold.\n\nEx:\n-  PO\n-  Requisition\n-  Phone sale\n-  Catalog sale\n-  Direct sale\n-  Internet sale\n-  Sales representative",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SalesMethodId",
+					"Description": "The unique identifier of a Sales Method.",
+					"BaseAttributeReference": {
+						"Entity": "SalesMethod.cdm.json/SalesMethod",
+						"Name": "SalesMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SalesMethodName",
+					"Description": "The name of the Sales Method.",
+					"BaseAttributeReference": {
+						"Entity": "SalesMethod.cdm.json/SalesMethod",
+						"Name": "SalesMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SalesMethodDescription",
+					"Description": "The description of the Sales Method.",
+					"BaseAttributeReference": {
+						"Entity": "SalesMethod.cdm.json/SalesMethod",
+						"Name": "SalesMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/SalesMethod",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/SalesMethod",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SalesMethodId\":{\"entity\":\"SalesMethod.cdm.json/SalesMethod\",\"name\":\"SalesMethodId\"},\"SalesMethodName\":{\"entity\":\"SalesMethod.cdm.json/SalesMethod\",\"name\":\"SalesMethodName\"},\"SalesMethodDescription\":{\"entity\":\"SalesMethod.cdm.json/SalesMethod\",\"name\":\"SalesMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SalesMethod\",\"path\":\"SalesMethod.cdm.json/SalesMethod\"},\"description\":\"The means by which the associated Order line items were sold.\\n\\nEx:\\n-  PO\\n-  Requisition\\n-  Phone sale\\n-  Catalog sale\\n-  Direct sale\\n-  Internet sale\\n-  Sales representative\",\"primaryKey\":[\"SalesMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SalesMethod.cdm.json/SalesMethod\",\"name\":\"SalesMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Sales Method.\",\"isNullable\":false,\"name\":\"SalesMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SalesMethod.cdm.json/SalesMethod\",\"name\":\"SalesMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of the Sales Method.\",\"isNullable\":true,\"name\":\"SalesMethodName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SalesMethod.cdm.json/SalesMethod\",\"name\":\"SalesMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of the Sales Method.\",\"isNullable\":true,\"name\":\"SalesMethodDescription\"}]}}}",
+			"Description": "The means by which the associated Order line items were sold.\n\nEx:\n-  PO\n-  Requisition\n-  Phone sale\n-  Catalog sale\n-  Direct sale\n-  Internet sale\n-  Sales representative",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "SalesMethodId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

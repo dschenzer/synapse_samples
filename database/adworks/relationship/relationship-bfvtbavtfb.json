@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bfvtbavtfb",
+	"properties": {
+		"Name": "relationship-bfvtbavtfb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SoftwareProductVersion",
+		"ToTableName": "Transaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SoftwareProductVersionNumber",
+				"ToColumnName": "SoftwareProductVersionNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SoftwareProductVersion.cdm.json/SoftwareProductVersion\",\"toEntity\":\"Transaction.cdm.json/Transaction\",\"joinPairs\":[{\"fromAttribute\":\"SoftwareProductVersionNumber\",\"toAttribute\":\"SoftwareProductVersionNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

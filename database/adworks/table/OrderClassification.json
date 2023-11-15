@@ -1,0 +1,116 @@
+{
+	"name": "OrderClassification",
+	"properties": {
+		"Name": "OrderClassification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "A classification of orders based on common characteristics.\n\nEx:\n- Internal Order\n- External Order\n- Work Order",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderClassificationId",
+					"Description": "The unique identifier of an Order Classification.",
+					"BaseAttributeReference": {
+						"Entity": "OrderClassification.cdm.json/OrderClassification",
+						"Name": "OrderClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderClassificationName",
+					"Description": "The name of an Order Classification.",
+					"BaseAttributeReference": {
+						"Entity": "OrderClassification.cdm.json/OrderClassification",
+						"Name": "OrderClassificationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderClassificationDescription",
+					"Description": "The description of an Order Classification.",
+					"BaseAttributeReference": {
+						"Entity": "OrderClassification.cdm.json/OrderClassification",
+						"Name": "OrderClassificationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderClassification",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderClassification",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderClassificationId\":{\"entity\":\"OrderClassification.cdm.json/OrderClassification\",\"name\":\"OrderClassificationId\"},\"OrderClassificationName\":{\"entity\":\"OrderClassification.cdm.json/OrderClassification\",\"name\":\"OrderClassificationName\"},\"OrderClassificationDescription\":{\"entity\":\"OrderClassification.cdm.json/OrderClassification\",\"name\":\"OrderClassificationDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderClassification\",\"path\":\"OrderClassification.cdm.json/OrderClassification\"},\"description\":\"A classification of orders based on common characteristics.\\n\\nEx:\\n- Internal Order\\n- External Order\\n- Work Order\",\"primaryKey\":[\"OrderClassificationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderClassification.cdm.json/OrderClassification\",\"name\":\"OrderClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Order Classification.\",\"isNullable\":false,\"name\":\"OrderClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderClassification.cdm.json/OrderClassification\",\"name\":\"OrderClassificationName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of an Order Classification.\",\"isNullable\":true,\"name\":\"OrderClassificationName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderClassification.cdm.json/OrderClassification\",\"name\":\"OrderClassificationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of an Order Classification.\",\"isNullable\":true,\"name\":\"OrderClassificationDescription\"}]}}}",
+			"Description": "A classification of orders based on common characteristics.\n\nEx:\n- Internal Order\n- External Order\n- Work Order",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderClassificationId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

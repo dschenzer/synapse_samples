@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nnohvlxuhd",
+	"properties": {
+		"Name": "relationship-nnohvlxuhd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Order",
+		"ToTableName": "RelatedOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderId",
+				"ToColumnName": "RelatedOrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Order.cdm.json/Order\",\"toEntity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"joinPairs\":[{\"fromAttribute\":\"OrderId\",\"toAttribute\":\"RelatedOrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

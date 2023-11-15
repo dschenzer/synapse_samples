@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mgtwuzntiq",
+	"properties": {
+		"Name": "relationship-mgtwuzntiq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrderLine",
+		"ToTableName": "CommunicationReason",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderLineNumber",
+				"ToColumnName": "OrderLineNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrderLine.cdm.json/OrderLine\",\"toEntity\":\"CommunicationReason.cdm.json/CommunicationReason\",\"joinPairs\":[{\"fromAttribute\":\"OrderLineNumber\",\"toAttribute\":\"OrderLineNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

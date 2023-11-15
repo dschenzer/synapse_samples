@@ -1,0 +1,151 @@
+{
+	"name": "OrderLoyaltyAccount",
+	"properties": {
+		"Name": "OrderLoyaltyAccount",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The one or more Loyalty Account(s) involved in or related to an order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LoyaltyProgramId",
+					"Description": "The unique identifier of a Loyalty Program.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount",
+						"Name": "LoyaltyProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LoyaltyAccountId",
+					"Description": "The unique identifier of a Loyalty Account.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount",
+						"Name": "LoyaltyAccountId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Amount",
+					"Description": "The amount of the loyalty-related Transaction.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount",
+						"Name": "Amount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderLoyaltyAccountNote",
+					"Description": "A note, comment or additional information regarding the order loyalty account relationship.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount",
+						"Name": "OrderLoyaltyAccountNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderLoyaltyAccount",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderLoyaltyAccount",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LoyaltyProgramId\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"LoyaltyProgramId\"},\"LoyaltyAccountId\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"LoyaltyAccountId\"},\"OrderId\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"OrderId\"},\"Amount\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"Amount\"},\"OrderLoyaltyAccountNote\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"OrderLoyaltyAccountNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderLoyaltyAccount\",\"path\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\"},\"description\":\"The one or more Loyalty Account(s) involved in or related to an order.\",\"primaryKey\":[\"LoyaltyProgramId\",\"LoyaltyAccountId\",\"OrderId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"LoyaltyProgramId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loyalty Program.\",\"isNullable\":false,\"name\":\"LoyaltyProgramId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"LoyaltyAccountId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Loyalty Account.\",\"isNullable\":false,\"name\":\"LoyaltyAccountId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"Amount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the loyalty-related Transaction.\",\"isNullable\":true,\"scale\":2,\"name\":\"Amount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLoyaltyAccount.cdm.json/OrderLoyaltyAccount\",\"name\":\"OrderLoyaltyAccountNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the order loyalty account relationship.\",\"isNullable\":true,\"name\":\"OrderLoyaltyAccountNote\"}]}}}",
+			"Description": "The one or more Loyalty Account(s) involved in or related to an order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "LoyaltyProgramId,LoyaltyAccountId,OrderId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,115 @@
+{
+	"name": "OrderDeliveryTerm",
+	"properties": {
+		"Name": "OrderDeliveryTerm",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The one or more Delivery Term(s) associated with the Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderDeliveryTerm.cdm.json/OrderDeliveryTerm",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DeliveryTermId",
+					"Description": "The unique identifier of a Delivery Term.",
+					"BaseAttributeReference": {
+						"Entity": "OrderDeliveryTerm.cdm.json/OrderDeliveryTerm",
+						"Name": "DeliveryTermId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderDeliveryTermNote",
+					"Description": "A note, comment or additional information regarding the Order Delivery Term.",
+					"BaseAttributeReference": {
+						"Entity": "OrderDeliveryTerm.cdm.json/OrderDeliveryTerm",
+						"Name": "OrderDeliveryTermNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderDeliveryTerm",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderDeliveryTerm",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderDeliveryTerm.cdm.json/OrderDeliveryTerm\",\"name\":\"OrderId\"},\"DeliveryTermId\":{\"entity\":\"OrderDeliveryTerm.cdm.json/OrderDeliveryTerm\",\"name\":\"DeliveryTermId\"},\"OrderDeliveryTermNote\":{\"entity\":\"OrderDeliveryTerm.cdm.json/OrderDeliveryTerm\",\"name\":\"OrderDeliveryTermNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderDeliveryTerm\",\"path\":\"OrderDeliveryTerm.cdm.json/OrderDeliveryTerm\"},\"description\":\"The one or more Delivery Term(s) associated with the Order.\",\"primaryKey\":[\"OrderId\",\"DeliveryTermId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderDeliveryTerm.cdm.json/OrderDeliveryTerm\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderDeliveryTerm.cdm.json/OrderDeliveryTerm\",\"name\":\"DeliveryTermId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Delivery Term.\",\"isNullable\":false,\"name\":\"DeliveryTermId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderDeliveryTerm.cdm.json/OrderDeliveryTerm\",\"name\":\"OrderDeliveryTermNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Order Delivery Term.\",\"isNullable\":true,\"name\":\"OrderDeliveryTermNote\"}]}}}",
+			"Description": "The one or more Delivery Term(s) associated with the Order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,DeliveryTermId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

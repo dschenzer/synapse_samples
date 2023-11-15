@@ -1,0 +1,150 @@
+{
+	"name": "OrderAuthorization",
+	"properties": {
+		"Name": "OrderAuthorization",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The authorization type(s) required by the associated Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderAuthorization.cdm.json/OrderAuthorization",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AuthorizationTypeId",
+					"Description": "The unique identifier of an Authorization Type.",
+					"BaseAttributeReference": {
+						"Entity": "OrderAuthorization.cdm.json/OrderAuthorization",
+						"Name": "AuthorizationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AuthorizationTimestamp",
+					"Description": "The timestamp that the associated authorization was provided or completed.",
+					"BaseAttributeReference": {
+						"Entity": "OrderAuthorization.cdm.json/OrderAuthorization",
+						"Name": "AuthorizationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AuthorizedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "OrderAuthorization.cdm.json/OrderAuthorization",
+						"Name": "AuthorizedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderAuthorizationNote",
+					"Description": "A note, comment or additional information regarding the order authorization.",
+					"BaseAttributeReference": {
+						"Entity": "OrderAuthorization.cdm.json/OrderAuthorization",
+						"Name": "OrderAuthorizationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderAuthorization",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderAuthorization",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"OrderId\"},\"AuthorizationTypeId\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"AuthorizationTypeId\"},\"AuthorizationTimestamp\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"AuthorizationTimestamp\"},\"AuthorizedByPartyId\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"AuthorizedByPartyId\"},\"OrderAuthorizationNote\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"OrderAuthorizationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderAuthorization\",\"path\":\"OrderAuthorization.cdm.json/OrderAuthorization\"},\"description\":\"The authorization type(s) required by the associated Order.\",\"primaryKey\":[\"OrderId\",\"AuthorizationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"AuthorizationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Authorization Type.\",\"isNullable\":false,\"name\":\"AuthorizationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"AuthorizationTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated authorization was provided or completed.\",\"isNullable\":true,\"name\":\"AuthorizationTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"AuthorizedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"AuthorizedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderAuthorization.cdm.json/OrderAuthorization\",\"name\":\"OrderAuthorizationNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the order authorization.\",\"isNullable\":true,\"name\":\"OrderAuthorizationNote\"}]}}}",
+			"Description": "The authorization type(s) required by the associated Order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,AuthorizationTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hyzdccdxqd",
+	"properties": {
+		"Name": "relationship-hyzdccdxqd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RejectionReason",
+		"ToTableName": "OrderLine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RejectionReasonId",
+				"ToColumnName": "RejectionReasonId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RejectionReason.cdm.json/RejectionReason\",\"toEntity\":\"OrderLine.cdm.json/OrderLine\",\"joinPairs\":[{\"fromAttribute\":\"RejectionReasonId\",\"toAttribute\":\"RejectionReasonId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

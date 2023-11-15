@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ptclwfddej",
+	"properties": {
+		"Name": "relationship-ptclwfddej",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrderClassification",
+		"ToTableName": "Order",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderClassificationId",
+				"ToColumnName": "OrderClassificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrderClassification.cdm.json/OrderClassification\",\"toEntity\":\"Order.cdm.json/Order\",\"joinPairs\":[{\"fromAttribute\":\"OrderClassificationId\",\"toAttribute\":\"OrderClassificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

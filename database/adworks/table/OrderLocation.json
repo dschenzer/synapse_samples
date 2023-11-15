@@ -1,0 +1,150 @@
+{
+	"name": "OrderLocation",
+	"properties": {
+		"Name": "OrderLocation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The locations associated with an Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLocation.cdm.json/OrderLocation",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderLocationTypeId",
+					"Description": "The unique identifier of an Order Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLocation.cdm.json/OrderLocation",
+						"Name": "OrderLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderLocationTimestamp",
+					"Description": "The timestamp associated with the Order Location.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLocation.cdm.json/OrderLocation",
+						"Name": "OrderLocationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLocation.cdm.json/OrderLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderLocationNote",
+					"Description": "A note, comment or additional information regarding the Order Location.",
+					"BaseAttributeReference": {
+						"Entity": "OrderLocation.cdm.json/OrderLocation",
+						"Name": "OrderLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderLocation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderLocation",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"OrderId\"},\"OrderLocationTypeId\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"OrderLocationTypeId\"},\"OrderLocationTimestamp\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"OrderLocationTimestamp\"},\"LocationId\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"LocationId\"},\"OrderLocationNote\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"OrderLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderLocation\",\"path\":\"OrderLocation.cdm.json/OrderLocation\"},\"description\":\"The locations associated with an Order.\",\"primaryKey\":[\"OrderId\",\"OrderLocationTypeId\",\"OrderLocationTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"OrderLocationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Order Location Type.\",\"isNullable\":false,\"name\":\"OrderLocationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"OrderLocationTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp associated with the Order Location.\",\"isNullable\":false,\"name\":\"OrderLocationTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderLocation.cdm.json/OrderLocation\",\"name\":\"OrderLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Order Location.\",\"isNullable\":true,\"name\":\"OrderLocationNote\"}]}}}",
+			"Description": "The locations associated with an Order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,OrderLocationTypeId,OrderLocationTimestamp",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

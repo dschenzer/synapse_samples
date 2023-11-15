@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ksozvdowvp",
+	"properties": {
+		"Name": "relationship-ksozvdowvp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrderLine",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderId",
+				"ToColumnName": "ShipmentOrderId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrderLine.cdm.json/OrderLine\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"OrderId\",\"toAttribute\":\"ShipmentOrderId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,115 @@
+{
+	"name": "OrderAcknowledgement",
+	"properties": {
+		"Name": "OrderAcknowledgement",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The order acknowledgement(s) received for an order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderAcknowledgementId",
+					"Description": "The unique number that identifies an Order Acknowledgement.",
+					"BaseAttributeReference": {
+						"Entity": "OrderAcknowledgement.cdm.json/OrderAcknowledgement",
+						"Name": "OrderAcknowledgementId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderAcknowledgmentNote",
+					"Description": "A note, comment or additional information regarding the Order Acknowledgement.",
+					"BaseAttributeReference": {
+						"Entity": "OrderAcknowledgement.cdm.json/OrderAcknowledgement",
+						"Name": "OrderAcknowledgmentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderAcknowledgement.cdm.json/OrderAcknowledgement",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderAcknowledgement",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderAcknowledgement",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderAcknowledgementId\":{\"entity\":\"OrderAcknowledgement.cdm.json/OrderAcknowledgement\",\"name\":\"OrderAcknowledgementId\"},\"OrderAcknowledgmentNote\":{\"entity\":\"OrderAcknowledgement.cdm.json/OrderAcknowledgement\",\"name\":\"OrderAcknowledgmentNote\"},\"OrderId\":{\"entity\":\"OrderAcknowledgement.cdm.json/OrderAcknowledgement\",\"name\":\"OrderId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderAcknowledgement\",\"path\":\"OrderAcknowledgement.cdm.json/OrderAcknowledgement\"},\"description\":\"The order acknowledgement(s) received for an order.\",\"primaryKey\":[\"OrderAcknowledgementId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderAcknowledgement.cdm.json/OrderAcknowledgement\",\"name\":\"OrderAcknowledgementId\"},\"dataType\":\"integer\",\"description\":\"The unique number that identifies an Order Acknowledgement.\",\"isNullable\":false,\"name\":\"OrderAcknowledgementId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderAcknowledgement.cdm.json/OrderAcknowledgement\",\"name\":\"OrderAcknowledgmentNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Order Acknowledgement.\",\"isNullable\":true,\"name\":\"OrderAcknowledgmentNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderAcknowledgement.cdm.json/OrderAcknowledgement\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"}]}}}",
+			"Description": "The order acknowledgement(s) received for an order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderAcknowledgementId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

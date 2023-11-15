@@ -1,0 +1,153 @@
+{
+	"name": "OrderPromotion",
+	"properties": {
+		"Name": "OrderPromotion",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The one or more Promotion(s) that apply to the associated Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderPromotion.cdm.json/OrderPromotion",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PromotionId",
+					"Description": "The unique identifier of a Promotion.",
+					"BaseAttributeReference": {
+						"Entity": "OrderPromotion.cdm.json/OrderPromotion",
+						"Name": "PromotionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderPromotionDiscountAmount",
+					"Description": "The amount of discount applied to the Order as a result of the promotion.",
+					"BaseAttributeReference": {
+						"Entity": "OrderPromotion.cdm.json/OrderPromotion",
+						"Name": "OrderPromotionDiscountAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderPromotionDiscountPercentage",
+					"Description": "The percentage of discount applied to the Order as a result of the promotion.",
+					"BaseAttributeReference": {
+						"Entity": "OrderPromotion.cdm.json/OrderPromotion",
+						"Name": "OrderPromotionDiscountPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderPromotionNote",
+					"Description": "A note, comment or additional information regarding the Order Promotion.",
+					"BaseAttributeReference": {
+						"Entity": "OrderPromotion.cdm.json/OrderPromotion",
+						"Name": "OrderPromotionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderPromotion",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderPromotion",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"OrderId\"},\"PromotionId\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"PromotionId\"},\"OrderPromotionDiscountAmount\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"OrderPromotionDiscountAmount\"},\"OrderPromotionDiscountPercentage\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"OrderPromotionDiscountPercentage\"},\"OrderPromotionNote\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"OrderPromotionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderPromotion\",\"path\":\"OrderPromotion.cdm.json/OrderPromotion\"},\"description\":\"The one or more Promotion(s) that apply to the associated Order.\",\"primaryKey\":[\"OrderId\",\"PromotionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"PromotionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Promotion.\",\"isNullable\":false,\"name\":\"PromotionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"OrderPromotionDiscountAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of discount applied to the Order as a result of the promotion.\",\"isNullable\":true,\"scale\":2,\"name\":\"OrderPromotionDiscountAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"OrderPromotionDiscountPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The percentage of discount applied to the Order as a result of the promotion.\",\"isNullable\":true,\"scale\":8,\"name\":\"OrderPromotionDiscountPercentage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderPromotion.cdm.json/OrderPromotion\",\"name\":\"OrderPromotionNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Order Promotion.\",\"isNullable\":true,\"name\":\"OrderPromotionNote\"}]}}}",
+			"Description": "The one or more Promotion(s) that apply to the associated Order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,PromotionId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

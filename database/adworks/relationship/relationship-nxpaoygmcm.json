@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nxpaoygmcm",
+	"properties": {
+		"Name": "relationship-nxpaoygmcm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Warehouse",
+		"ToTableName": "PurchaseOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WarehouseId",
+				"ToColumnName": "ShipToWarehouseId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Warehouse.cdm.json/Warehouse\",\"toEntity\":\"PurchaseOrder.cdm.json/PurchaseOrder\",\"joinPairs\":[{\"fromAttribute\":\"WarehouseId\",\"toAttribute\":\"ShipToWarehouseId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vlrfkdcrlb",
+	"properties": {
+		"Name": "relationship-vlrfkdcrlb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OrderAcknowledgement",
+		"ToTableName": "OrderAcknowledgementOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderAcknowledgementId",
+				"ToColumnName": "OrderAcknowledgementId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OrderAcknowledgement.cdm.json/OrderAcknowledgement\",\"toEntity\":\"OrderAcknowledgementOrder.cdm.json/OrderAcknowledgementOrder\",\"joinPairs\":[{\"fromAttribute\":\"OrderAcknowledgementId\",\"toAttribute\":\"OrderAcknowledgementId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hpcgtdvkoq",
+	"properties": {
+		"Name": "relationship-hpcgtdvkoq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SalesMethod",
+		"ToTableName": "Order",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SalesMethodId",
+				"ToColumnName": "SalesMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SalesMethod.cdm.json/SalesMethod\",\"toEntity\":\"Order.cdm.json/Order\",\"joinPairs\":[{\"fromAttribute\":\"SalesMethodId\",\"toAttribute\":\"SalesMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

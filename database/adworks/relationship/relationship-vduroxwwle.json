@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vduroxwwle",
+	"properties": {
+		"Name": "relationship-vduroxwwle",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CustomerIdentificationMethod",
+		"ToTableName": "Transaction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerIdentificationMethodId",
+				"ToColumnName": "CustomerIdentificationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CustomerIdentificationMethod.cdm.json/CustomerIdentificationMethod\",\"toEntity\":\"Transaction.cdm.json/Transaction\",\"joinPairs\":[{\"fromAttribute\":\"CustomerIdentificationMethodId\",\"toAttribute\":\"CustomerIdentificationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,132 @@
+{
+	"name": "RelatedOrder",
+	"properties": {
+		"Name": "RelatedOrder",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The relationship of two or more orders.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RelatedOrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedOrder.cdm.json/RelatedOrder",
+						"Name": "RelatedOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedOrder.cdm.json/RelatedOrder",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderRelationshipTypeId",
+					"Description": "The unique identifier of a Transaction Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedOrder.cdm.json/RelatedOrder",
+						"Name": "OrderRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderRelationshipNote",
+					"Description": "A note, comment or additional information regarding the Related Order.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedOrder.cdm.json/RelatedOrder",
+						"Name": "OrderRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/RelatedOrder",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/RelatedOrder",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RelatedOrderId\":{\"entity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"name\":\"RelatedOrderId\"},\"OrderId\":{\"entity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"name\":\"OrderId\"},\"OrderRelationshipTypeId\":{\"entity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"name\":\"OrderRelationshipTypeId\"},\"OrderRelationshipNote\":{\"entity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"name\":\"OrderRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedOrder\",\"path\":\"RelatedOrder.cdm.json/RelatedOrder\"},\"description\":\"The relationship of two or more orders.\",\"primaryKey\":[\"RelatedOrderId\",\"OrderId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"name\":\"RelatedOrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"RelatedOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"name\":\"OrderRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transaction Relationship Type.\",\"isNullable\":true,\"name\":\"OrderRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedOrder.cdm.json/RelatedOrder\",\"name\":\"OrderRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Related Order.\",\"isNullable\":true,\"name\":\"OrderRelationshipNote\"}]}}}",
+			"Description": "The relationship of two or more orders.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RelatedOrderId,OrderId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,135 @@
+{
+	"name": "OrderCoupon",
+	"properties": {
+		"Name": "OrderCoupon",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The coupon(s) used to purchase the associated Order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CouponId",
+					"Description": "The unique identifier of a coupon.",
+					"BaseAttributeReference": {
+						"Entity": "OrderCoupon.cdm.json/OrderCoupon",
+						"Name": "CouponId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderCoupon.cdm.json/OrderCoupon",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderCouponDiscountAmount",
+					"Description": "The amount of discount applied to the Order as a result of the coupon.",
+					"BaseAttributeReference": {
+						"Entity": "OrderCoupon.cdm.json/OrderCoupon",
+						"Name": "OrderCouponDiscountAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderCouponDiscountPercentage",
+					"Description": "The percentage of discount applied to the Order as a result of the coupon.",
+					"BaseAttributeReference": {
+						"Entity": "OrderCoupon.cdm.json/OrderCoupon",
+						"Name": "OrderCouponDiscountPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderCoupon",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderCoupon",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CouponId\":{\"entity\":\"OrderCoupon.cdm.json/OrderCoupon\",\"name\":\"CouponId\"},\"OrderId\":{\"entity\":\"OrderCoupon.cdm.json/OrderCoupon\",\"name\":\"OrderId\"},\"OrderCouponDiscountAmount\":{\"entity\":\"OrderCoupon.cdm.json/OrderCoupon\",\"name\":\"OrderCouponDiscountAmount\"},\"OrderCouponDiscountPercentage\":{\"entity\":\"OrderCoupon.cdm.json/OrderCoupon\",\"name\":\"OrderCouponDiscountPercentage\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderCoupon\",\"path\":\"OrderCoupon.cdm.json/OrderCoupon\"},\"description\":\"The coupon(s) used to purchase the associated Order.\",\"primaryKey\":[\"CouponId\",\"OrderId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderCoupon.cdm.json/OrderCoupon\",\"name\":\"CouponId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a coupon.\",\"isNullable\":false,\"name\":\"CouponId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderCoupon.cdm.json/OrderCoupon\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderCoupon.cdm.json/OrderCoupon\",\"name\":\"OrderCouponDiscountAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of discount applied to the Order as a result of the coupon.\",\"isNullable\":true,\"scale\":2,\"name\":\"OrderCouponDiscountAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderCoupon.cdm.json/OrderCoupon\",\"name\":\"OrderCouponDiscountPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The percentage of discount applied to the Order as a result of the coupon.\",\"isNullable\":true,\"scale\":8,\"name\":\"OrderCouponDiscountPercentage\"}]}}}",
+			"Description": "The coupon(s) used to purchase the associated Order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "CouponId,OrderId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

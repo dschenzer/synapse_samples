@@ -1,0 +1,132 @@
+{
+	"name": "OrderRelatedParty",
+	"properties": {
+		"Name": "OrderRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "adworks"
+		},
+		"Description": "The relation of a party to an order.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OrderId",
+					"Description": "The unique number that identifies an Order.",
+					"BaseAttributeReference": {
+						"Entity": "OrderRelatedParty.cdm.json/OrderRelatedParty",
+						"Name": "OrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "OrderRelatedParty.cdm.json/OrderRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Order Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "OrderRelatedParty.cdm.json/OrderRelatedParty",
+						"Name": "OrderPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OrderPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding the Order - Party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "OrderRelatedParty.cdm.json/OrderRelatedParty",
+						"Name": "OrderPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderRelatedParty",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://code@schenzersynapse.dfs.core.windows.net/synapse/workspaces/SCHENZER-SYNAPSE/OrderRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "schenzer-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OrderId\":{\"entity\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\",\"name\":\"OrderId\"},\"PartyId\":{\"entity\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\",\"name\":\"PartyId\"},\"OrderPartyRelationshipTypeId\":{\"entity\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\",\"name\":\"OrderPartyRelationshipTypeId\"},\"OrderPartyRelationshipNote\":{\"entity\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\",\"name\":\"OrderPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OrderRelatedParty\",\"path\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\"},\"description\":\"The relation of a party to an order.\",\"primaryKey\":[\"OrderId\",\"PartyId\",\"OrderPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\",\"name\":\"OrderId\"},\"dataType\":\"long\",\"description\":\"The unique number that identifies an Order.\",\"isNullable\":false,\"name\":\"OrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\",\"name\":\"OrderPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Order Party Relationship Type.\",\"isNullable\":false,\"name\":\"OrderPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OrderRelatedParty.cdm.json/OrderRelatedParty\",\"name\":\"OrderPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A note, comment or additional information regarding the Order - Party relationship.\",\"isNullable\":true,\"name\":\"OrderPartyRelationshipNote\"}]}}}",
+			"Description": "The relation of a party to an order.",
+			"DisplayFolderInfo": "{\"name\":\"Order\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OrderId,PartyId,OrderPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
